@@ -96,6 +96,54 @@
       margin-bottom: 0.5rem;
       display: inline-block;
     }
+    /* Add this to your existing style tag */
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline;
+    }
+
+    /* Hover Animations for Icons */
+    .social-icon {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px) scale(1.1);
+      color: #3b82f6;
+    }
+
+    /* Improved Button Hover */
+    .button-hover {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .button-hover:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+      transition: all 0.5s ease;
+    }
+
+    .button-hover:hover:before {
+      left: 100%;
+    }
+
+    /* Enhanced project card hover */
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
   </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
@@ -118,11 +166,11 @@
         <img src="/assets/images/headshot.png" alt="Jesse Peplinski" class="w-full h-full object-cover" />
       </div>
       <div>
-        <h1 class="text-3xl md:text-4xl font-bold mb-3">Hi, I'm Jesse Peplinski.</h1>
+        <h1 class="text-3xl md:text-4xl font-bold mb-3">Hi, I'm <span class="gradient-text">Jesse Peplinski</span>.</h1>
         <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-          I'm a software developer who loves turning <span class="font-semibold">ideas into apps</span>.
+          I'm a software developer who loves turning <span id="typed-text"></span>
         </p>
-        <div class="flex space-x-4">
+        <div class="flex space-x-4 social-links">
           <a href="https://x.com/peptech_" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
           </a>
@@ -143,7 +191,7 @@
   <!-- Portfolio Section -->
   <section id="portfolio" class="py-16 bg-gray-50 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">My Projects</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><span class="gradient-text">My Projects</span></h2>
       
       <!-- Filter Bar -->
       <div class="mb-8 flex flex-wrap justify-center">
@@ -173,7 +221,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">Q2 2024</span>
-              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Live Demo</a>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition button-hover">Live Demo</a>
             </div>
           </div>
         </div>
@@ -194,7 +242,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">Q1 2024</span>
-              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Documentation</a>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition button-hover">Documentation</a>
             </div>
           </div>
         </div>
@@ -215,7 +263,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">Q4 2023</span>
-              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">App Store</a>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition button-hover">App Store</a>
             </div>
           </div>
         </div>
@@ -236,7 +284,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">Q3 2023</span>
-              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Visit Site</a>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition button-hover">Visit Site</a>
             </div>
           </div>
         </div>
@@ -257,7 +305,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">Q2 2023</span>
-              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Live Demo</a>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition button-hover">Live Demo</a>
             </div>
           </div>
         </div>
@@ -278,7 +326,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">Q1 2023</span>
-              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Play Store</a>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition button-hover">Play Store</a>
             </div>
           </div>
         </div>
@@ -289,11 +337,11 @@
   <!-- Contact Section -->
   <section id="contact" class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6">Have an idea? Let's build it together.</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Have an <span class="gradient-text">idea</span>? Let's <span class="gradient-text">build</span> it together.</h2>
       <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
         I'm available for contract work in website development, prototyping, and MVP creation. Whether you need a complete website, an app, or simply want to discuss an idea, I'd love to hear from you.
       </p>
-      <a href="mailto:peplinski.jesse@gmail.com" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-gray-900 dark:bg-gray-700 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 focus:shadow-outline focus:outline-none">
+      <a href="mailto:peplinski.jesse@gmail.com" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-gray-900 dark:bg-gray-700 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 focus:shadow-outline focus:outline-none button-hover">
         Get in Touch
       </a>
     </div>
@@ -305,7 +353,7 @@
       <div class="mb-4 md:mb-0">
         <span class="text-sm text-gray-600 dark:text-gray-400">© 2025 Jesse Peplinski. All rights reserved.</span>
       </div>
-      <div class="flex space-x-4">
+      <div class="flex space-x-4 social-links">
         <a href="https://x.com/peptech_" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
         </a>
@@ -322,9 +370,12 @@
     </div>
   </footer>
 
+  <!-- TypedJS for animated typing effect -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
   <script>
-    // Filter functionality
     document.addEventListener('DOMContentLoaded', function() {
+      // Existing filter functionality
       const filterButtons = document.querySelectorAll('.filter-tag');
       const projectCards = document.querySelectorAll('.project-card');
       
@@ -367,6 +418,28 @@
             });
           }
         });
+      });
+
+      // Typed.js initialization for animated text
+      const typedElement = document.getElementById('typed-text');
+      if(typedElement) {
+        new Typed('#typed-text', {
+          strings: [
+            'ideas into apps.',
+            'concepts into code.',
+            'designs into reality.',
+          ],
+          typeSpeed: 50,
+          backSpeed: 30,
+          backDelay: 2000,
+          loop: true,
+          showCursor: true
+        });
+      }
+
+      // Apply social icon hover classes
+      document.querySelectorAll('.social-links a').forEach(icon => {
+        icon.classList.add('social-icon');
       });
     });
   </script>
