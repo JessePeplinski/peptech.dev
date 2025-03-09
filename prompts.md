@@ -2,7 +2,7 @@
 My portfolio page is created initially and looks OK, but it's not very interesting in terms of transitions or visual affects. Can you add some modern features to the landing page to give it some pop and some flare?
 
 # Follow Up
-I want to improve this page as follows. I don't want to 
+I want to improve this page as follows. I don't want to add external libraries so I can have the fastest load time possible. 
 
 Visual Effects and Animations:
 
