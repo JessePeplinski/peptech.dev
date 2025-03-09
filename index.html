@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pep Tech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .filter-tag.active {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .tech-badge {
+      background-color: hsl(var(--secondary));
+      color: hsl(var(--secondary-foreground));
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 md:px-6 py-3">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <span class="text-xl font-bold">Peptech.dev</span>
+      <div class="flex items-center space-x-4">
+        <a href="#about" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">About</a>
+        <a href="#portfolio" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Portfolio</a>
+        <a href="#contact" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
+      <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 md:mb-0 md:mr-8 flex-shrink-0">
+        <img src="/api/placeholder/192/192" alt="Jesse Peplinski" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-3">Hi, I'm Jesse Peplinski.</h1>
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
+          I'm a software developer who loves turning <span class="font-semibold">ideas into apps</span>. Check out my work below.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://x.com/jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
+          <a href="https://github.com/jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://linkedin.com/in/jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://medium.com/@jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5z"></path><line x1="8" y1="2" x2="8" y2="22"></line><line x1="16" y1="6" x2="12" y2="6"></line><line x1="16" y1="10" x2="12" y2="10"></line><line x1="16" y1="14" x2="12" y2="14"></line><line x1="16" y1="18" x2="12" y2="18"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">My Projects</h2>
+      
+      <!-- Filter Bar -->
+      <div class="mb-8 flex flex-wrap justify-center">
+        <button class="filter-tag active m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="all">All</button>
+        <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="react">React</button>
+        <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="node">Node.js</button>
+        <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="typescript">TypeScript</button>
+        <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="web">Web Apps</button>
+        <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="mobile">Mobile Apps</button>
+      </div>
+      
+      <!-- Project Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-200 dark:border-gray-700" 
+             data-tags="react typescript web">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img src="/api/placeholder/400/225" alt="Project Screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">TaskFlow Pro</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">A productivity dashboard for teams to manage tasks and track progress.</p>
+            <div class="mb-3">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Firebase</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs text-gray-500">Q2 2024</span>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Live Demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-200 dark:border-gray-700" 
+             data-tags="node typescript web">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img src="/api/placeholder/400/225" alt="Project Screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">DevHub API</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">A RESTful API service for developers to integrate with popular dev tools.</p>
+            <div class="mb-3">
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Express</span>
+              <span class="tech-badge">MongoDB</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs text-gray-500">Q1 2024</span>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Documentation</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-200 dark:border-gray-700" 
+             data-tags="react node mobile">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img src="/api/placeholder/400/225" alt="Project Screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">FitTrack Mobile</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">A fitness tracking app that helps users monitor workouts and nutrition.</p>
+            <div class="mb-3">
+              <span class="tech-badge">React Native</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">GraphQL</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs text-gray-500">Q4 2023</span>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">App Store</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-200 dark:border-gray-700" 
+             data-tags="typescript web">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img src="/api/placeholder/400/225" alt="Project Screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">CodeReview AI</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">An AI-powered code review tool that provides suggestions and improvements.</p>
+            <div class="mb-3">
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Next.js</span>
+              <span class="tech-badge">OpenAI</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs text-gray-500">Q3 2023</span>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Visit Site</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-200 dark:border-gray-700" 
+             data-tags="react node web">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img src="/api/placeholder/400/225" alt="Project Screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">DataViz Dashboard</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">A customizable dashboard for visualizing complex datasets with interactive charts.</p>
+            <div class="mb-3">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">D3.js</span>
+              <span class="tech-badge">Node.js</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs text-gray-500">Q2 2023</span>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Live Demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6 -->
+        <div class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-200 dark:border-gray-700" 
+             data-tags="typescript mobile">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img src="/api/placeholder/400/225" alt="Project Screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">LocalExplorer</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">A location-based app that helps users discover hidden gems in their neighborhood.</p>
+            <div class="mb-3">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Firebase</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs text-gray-500">Q1 2023</span>
+              <a href="#" class="bg-gray-900 dark:bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Play Store</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Have an idea? Let's build it together.</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+        I'm open to contract work, prototyping, and MVP development. Whether you need a full app or just want to discuss a concept, I'd love to hear from you.
+      </p>
+      <a href="mailto:hello@jessepeplinski.com" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-gray-900 dark:bg-gray-700 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 focus:shadow-outline focus:outline-none">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <span class="text-sm text-gray-600 dark:text-gray-400">© 2025 Jesse Peplinski. All rights reserved.</span>
+      </div>
+      <div class="flex space-x-4">
+        <a href="https://x.com/jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+        </a>
+        <a href="https://github.com/jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://linkedin.com/in/jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://medium.com/@jessepeplinski" target="_blank" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5z"></path><line x1="8" y1="2" x2="8" y2="22"></line><line x1="16" y1="6" x2="12" y2="6"></line><line x1="16" y1="10" x2="12" y2="10"></line><line x1="16" y1="14" x2="12" y2="14"></line><line x1="16" y1="18" x2="12" y2="18"></line></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-tag');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          const filter = button.getAttribute('data-filter');
+          
+          projectCards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = 'block';
+            } else {
+              const tags = card.getAttribute('data-tags').split(' ');
+              if (tags.includes(filter)) {
+                card.style.display = 'block';
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70, // Offset for fixed navbar
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
