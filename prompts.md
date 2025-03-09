@@ -32,10 +32,13 @@ Animated Backgrounds - Subtle animated shapes in the contact section
 Navbar Scroll Effect - Navbar changes size/shadow on scroll
 
 # UI Improvement
-I want to improve this page as follows. I don't want to add external libraries so I can have the fastest load time possible. 
+I want to improve this page as follows. Please only implement these features for now.
+
+Only send me the relevant code I need to update. 
 
 Visual Effects and Animations:
-Gradient Text - Key headings have a blue-to-purple gradient text effect
+Animated Text Typing - Your tagline now types out different phrases automatically
+Gradient Text - Key headings have a blue-to-orange gradient text effect
 Hover Animations - Social media icons, buttons, and cards all have smooth hover animations
 
 
