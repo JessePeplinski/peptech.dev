@@ -42,5 +42,10 @@ Gradient Text - Key headings have a blue-to-orange gradient text effect
 Hover Animations - Social media icons, buttons, and cards all have smooth hover animations
 
 
+# Spaceship flies around
+I want to update this landing page so that it creates a small spaceship in the background that "follows the user" around as they move their mouse and scroll among the page. It should be subtle and not distracting to the user. It should work on both desktop and mobile. Once they get to the "Have an idea? Let's build it together." have it land land on a spaceship platform. 
+
+Think hard about the problem before you provide a solution. Only send me the relevant code I need to update.
+
 # Filter menu update
 I want to update how my filer menu works. I don't think that 
