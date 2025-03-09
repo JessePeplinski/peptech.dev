@@ -30,3 +30,14 @@ Persistent Theme Preference - Dark/light mode preference is saved in local stora
 Responsive Design - All new features adapt well to different screen sizes
 Animated Backgrounds - Subtle animated shapes in the contact section
 Navbar Scroll Effect - Navbar changes size/shadow on scroll
+
+# UI Improvement
+I want to improve this page as follows. I don't want to add external libraries so I can have the fastest load time possible. 
+
+Visual Effects and Animations:
+Gradient Text - Key headings have a blue-to-purple gradient text effect
+Hover Animations - Social media icons, buttons, and cards all have smooth hover animations
+
+
+# Filter menu update
+I want to update how my filer menu works. I don't think that 
