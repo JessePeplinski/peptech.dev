@@ -128,8 +128,18 @@
       margin-right: 0.5rem;
       margin-bottom: 0.5rem;
       display: inline-block;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    /* Add this to your existing style tag */
+
+    .tech-badge:hover {
+      transform: translateY(-1px);
+    }
+    
+    .tech-badge.active-sub-filter {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
 
     /* Gradient Text */
     .gradient-text {
@@ -197,6 +207,27 @@
       position: relative;
     }
 
+    /* Additional styles for active sub-filters */
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .filter-pill-remove {
+      margin-left: 0.25rem;
+      font-size: 1rem;
+      line-height: 0.5;
+      cursor: pointer;
+    }
+
+
   </style>
 </head>
 
@@ -261,11 +292,18 @@
       <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><span class="gradient-text">My Projects</span></h2>
       
       <!-- Filter Bar -->
-      <div class="mb-8 flex flex-wrap justify-center">
+      <div class="mb-6 flex flex-wrap justify-center">
         <button class="filter-tag active m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="all">All</button>
         <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="website">Websites</button>
         <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="webapp">Web Apps</button>
         <button class="filter-tag m-1 px-3 py-1 rounded-md text-sm font-medium transition" data-filter="game">Games</button>
+      </div>
+
+      <!-- Active Sub-filters Container -->
+      <div id="active-sub-filters" class="mb-6 flex flex-wrap justify-center items-center hidden">
+        <span class="mr-2 text-sm text-gray-600 dark:text-gray-400">Active filters:</span>
+        <div id="active-filter-tags" class="flex flex-wrap"></div>
+        <button id="clear-sub-filters" class="ml-3 text-sm text-blue-600 dark:text-blue-400 hover:underline">Clear filters</button>
       </div>
       
       <!-- Project Grid -->
@@ -283,8 +321,8 @@
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">A 2D browser based dungeon crawler inspired by Metal Gear Solid.</p>
           <div class="card-footer"> <!-- Add the card-footer class -->
             <div class="mb-3">
-              <span class="tech-badge status-building">Building</span>
-              <span class="tech-badge">Phaser</span>
+              <span data-filter-type="status" data-filter-value="Building" class="tech-badge status-building">Building</span>
+              <span data-filter-type="tech" data-filter-value="Phaser" class="tech-badge">Phaser</span>
             </div>
             <div class="flex justify-between items-center">
               <span class="text-xs text-gray-500">2025</span>
@@ -307,8 +345,8 @@
             <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">Create your own murder mysteries for your friends to solve.</p>
             <div class="card-footer"> <!-- Add the card-footer class -->
               <div class="mb-3">
-                <span class="tech-badge status-building">Building</span>
-                <span class="tech-badge">Bootstrap</span>
+                <span data-filter-type="status" data-filter-value="Building" class="tech-badge status-building">Building</span>
+                <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -331,8 +369,8 @@
             <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">A website for our wedding. </p>
             <div class="card-footer"> <!-- Add the card-footer class -->
               <div class="mb-3">
-                <span class="tech-badge status-launched">Launched</span>
-                <span class="tech-badge">Bootstrap</span>
+                <span data-filter-type="status" data-filter-value="Launched" class="tech-badge status-launched">Launched</span>
+                <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -354,8 +392,8 @@
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">Concept web app for finding the closest restaurant between 2 addresses.</p>
           <div class="card-footer"> <!-- Add the card-footer class -->
             <div class="mb-3">
-              <span class="tech-badge status-concept">Concept</span>
-              <span class="tech-badge">Bootstrap</span>
+              <span data-filter-type="status" data-filter-value="Concept" class="tech-badge status-concept">Concept</span>
+              <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
             </div>
           </div>
           <div class="flex justify-between items-center">
@@ -378,8 +416,8 @@
             <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">Landing page for a 24 hackathon in Potsdam.</p>
             <div class="card-footer"> <!-- Add the card-footer class -->
               <div class="mb-3">
-                <span class="tech-badge status-launched">Launched</span>
-                <span class="tech-badge">Bootstrap</span>
+                <span data-filter-type="status" data-filter-value="Launched" class="tech-badge status-launched">Launched</span>
+                <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -402,8 +440,8 @@
             <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">Landing page for a Go Workshop hosted at SUNY Potsdam.</p>
             <div class="card-footer"> <!-- Add the card-footer class -->
               <div class="mb-3">
-                <span class="tech-badge status-launched">Launched</span>
-                <span class="tech-badge">Bootstrap</span>
+                <span data-filter-type="status" data-filter-value="Launched" class="tech-badge status-launched">Launched</span>
+                <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -425,8 +463,8 @@
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">Concept web app for a hardware lending library.</p>
           <div class="card-footer"> <!-- Add the card-footer class -->
             <div class="mb-3">
-              <span class="tech-badge status-concept">Concept</span>
-              <span class="tech-badge">Bootstrap</span>
+              <span data-filter-type="status" data-filter-value="Concept" class="tech-badge status-concept">Concept</span>
+              <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
             </div>
           </div>
           <div class="flex justify-between items-center">
@@ -449,8 +487,8 @@
             <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 description">My personal portfolio website. Needs to be updated.</p>
             <div class="card-footer"> <!-- Add the card-footer class -->
               <div class="mb-3">
-                <span class="tech-badge status-launched">Launched</span>
-                <span class="tech-badge">Bootstrap</span>
+                <span data-filter-type="status" data-filter-value="Launched" class="tech-badge status-launched">Launched</span>
+                <span data-filter-type="tech" data-filter-value="Bootstrap" class="tech-badge">Bootstrap</span>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -504,52 +542,161 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Existing filter functionality
+      // Elements
       const filterButtons = document.querySelectorAll('.filter-tag');
       const projectCards = document.querySelectorAll('.project-card');
+      const techBadges = document.querySelectorAll('.tech-badge');
+      const activeSubFiltersContainer = document.getElementById('active-sub-filters');
+      const activeFilterTags = document.getElementById('active-filter-tags');
+      const clearSubFiltersButton = document.getElementById('clear-sub-filters');
       
+      // Track active filters
+      let activeMainFilter = 'all';
+      let activeSubFilters = [];
+      
+      // Main filter functionality (enhanced)
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-          // Remove active class from all buttons
+          // Remove active class from all main filter buttons
           filterButtons.forEach(btn => btn.classList.remove('active'));
           // Add active class to clicked button
           button.classList.add('active');
           
-          const filter = button.getAttribute('data-filter');
+          // Update active main filter
+          activeMainFilter = button.getAttribute('data-filter');
           
-          projectCards.forEach(card => {
-            if (filter === 'all') {
-              card.style.display = 'block';
-            } else {
-              const tags = card.getAttribute('data-tags').split(' ');
-              if (tags.includes(filter)) {
-                card.style.display = 'block';
-              } else {
-                card.style.display = 'none';
-              }
-            }
-          });
+          // Apply all filters
+          applyFilters();
         });
       });
       
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
+      // Sub-filter functionality (new)
+      techBadges.forEach(badge => {
+        badge.addEventListener('click', () => {
+          const filterType = badge.getAttribute('data-filter-type');
+          const filterValue = badge.getAttribute('data-filter-value');
+          const filterKey = `${filterType}:${filterValue}`;
           
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 70, // Offset for fixed navbar
-              behavior: 'smooth'
+          // Toggle sub-filter
+          const filterIndex = activeSubFilters.findIndex(f => f.key === filterKey);
+          if (filterIndex === -1) {
+            // Add filter
+            activeSubFilters.push({
+              key: filterKey,
+              type: filterType,
+              value: filterValue,
+              element: badge
             });
+            badge.classList.add('active-sub-filter');
+          } else {
+            // Remove filter
+            activeSubFilters.splice(filterIndex, 1);
+            badge.classList.remove('active-sub-filter');
           }
+          
+          // Update UI and apply filters
+          updateActiveFiltersUI();
+          applyFilters();
         });
       });
-
-      // Typed.js initialization for animated text
+      
+      // Clear sub-filters
+      clearSubFiltersButton.addEventListener('click', () => {
+        // Remove active class from all sub-filters
+        activeSubFilters.forEach(filter => {
+          filter.element.classList.remove('active-sub-filter');
+        });
+        
+        // Clear active sub-filters array
+        activeSubFilters = [];
+        
+        // Update UI and apply filters
+        updateActiveFiltersUI();
+        applyFilters();
+      });
+      
+      // Update active filters UI
+      function updateActiveFiltersUI() {
+        // Clear current pills
+        activeFilterTags.innerHTML = '';
+        
+        // Show/hide container based on if there are active sub-filters
+        if (activeSubFilters.length > 0) {
+          activeSubFiltersContainer.classList.remove('hidden');
+          
+          // Create pills for each active sub-filter
+          activeSubFilters.forEach(filter => {
+            const pill = document.createElement('span');
+            pill.className = 'filter-pill';
+            pill.innerHTML = `
+              ${filter.type === 'status' ? '' : filter.type + ': '}${filter.value}
+              <span class="filter-pill-remove" data-filter-key="${filter.key}">&times;</span>
+            `;
+            activeFilterTags.appendChild(pill);
+            
+            // Add click event to remove button
+            pill.querySelector('.filter-pill-remove').addEventListener('click', function() {
+              const filterKey = this.getAttribute('data-filter-key');
+              const filterIndex = activeSubFilters.findIndex(f => f.key === filterKey);
+              
+              if (filterIndex !== -1) {
+                // Remove active class from badge
+                activeSubFilters[filterIndex].element.classList.remove('active-sub-filter');
+                
+                // Remove from active filters
+                activeSubFilters.splice(filterIndex, 1);
+                
+                // Update UI and apply filters
+                updateActiveFiltersUI();
+                applyFilters();
+              }
+            });
+          });
+        } else {
+          activeSubFiltersContainer.classList.add('hidden');
+        }
+      }
+      
+      // Apply all filters (main and sub)
+      function applyFilters() {
+        projectCards.forEach(card => {
+          let visible = true;
+          
+          // Check main filter
+          if (activeMainFilter !== 'all') {
+            const cardTags = card.getAttribute('data-tags').split(' ');
+            visible = cardTags.includes(activeMainFilter);
+          }
+          
+          // Check sub-filters if card passes main filter
+          if (visible && activeSubFilters.length > 0) {
+            activeSubFilters.forEach(filter => {
+              // Find all tech badges in this card
+              const cardBadges = card.querySelectorAll('.tech-badge');
+              let matchesSubFilter = false;
+              
+              cardBadges.forEach(badge => {
+                const badgeType = badge.getAttribute('data-filter-type');
+                const badgeValue = badge.getAttribute('data-filter-value');
+                
+                if (badgeType === filter.type && badgeValue === filter.value) {
+                  matchesSubFilter = true;
+                }
+              });
+              
+              // If this card doesn't match any sub-filter, hide it
+              if (!matchesSubFilter) {
+                visible = false;
+              }
+            });
+          }
+          
+          // Show/hide card
+          card.style.display = visible ? 'block' : 'none';
+        });
+      }
+      
+      // Initialize typed.js and smooth scrolling (existing code)
       const typedElement = document.getElementById('typed-text');
       if(typedElement) {
         new Typed('#typed-text', {
@@ -565,7 +712,7 @@
           showCursor: true
         });
       }
-
+  
       // Apply social icon hover classes
       document.querySelectorAll('.social-links a').forEach(icon => {
         icon.classList.add('social-icon');
