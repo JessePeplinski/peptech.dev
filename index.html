@@ -119,9 +119,10 @@
       opacity: 1;
     }
     
-    .tech-badge{
-      background-color: hsl(var(--secondary));
-      color: hsl(var(--secondary-foreground));
+    /* Updated tech-badge styling */
+    .tech-badge {
+      background-color: rgba(226, 232, 240, 0.8); /* Lighter bg color (light mode) */
+      color: #475569; /* Slate-600 color for better contrast */
       font-size: 0.75rem;
       padding: 0.25rem 0.5rem;
       border-radius: 9999px;
@@ -130,15 +131,60 @@
       display: inline-block;
       cursor: pointer;
       transition: all 0.2s ease;
+      border: 1px solid rgba(226, 232, 240, 0.9); /* Subtle border */
+    }
+
+    .dark .tech-badge {
+      background-color: rgba(51, 65, 85, 0.4); /* Darker but more transparent (dark mode) */
+      color: #cbd5e1; /* Slate-300 for dark mode */
+      border: 1px solid rgba(71, 85, 105, 0.6); /* Subtle border for dark mode */
     }
 
     .tech-badge:hover {
       transform: translateY(-1px);
+      border-color: #3b82f6; /* Blue highlight on hover */
     }
-    
+
     .tech-badge.active-sub-filter {
-      background-color: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
+      background-color: rgba(59, 130, 246, 0.15); /* Very light blue background */
+      color: #2563eb; /* Blue-600 */
+      border-color: #3b82f6; /* Blue border */
+    }
+
+    .dark .tech-badge.active-sub-filter {
+      background-color: rgba(59, 130, 246, 0.2); /* Slight blue tint for dark mode */
+      color: #93c5fd; /* Blue-300 for dark mode */
+      border-color: #3b82f6; /* Blue border */
+    }
+
+    /* Filter tag styling updates to match */
+    .filter-tag {
+      background-color: rgba(226, 232, 240, 0.8);
+      color: #475569;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      transition: all 0.2s ease;
+    }
+
+    .dark .filter-tag {
+      background-color: rgba(51, 65, 85, 0.4);
+      color: #cbd5e1;
+      border: 1px solid rgba(71, 85, 105, 0.6);
+    }
+
+    .filter-tag:hover {
+      border-color: #3b82f6;
+    }
+
+    .filter-tag.active {
+      background-color: rgba(59, 130, 246, 0.15);
+      color: #2563eb;
+      border-color: #3b82f6;
+    }
+
+    .dark .filter-tag.active {
+      background-color: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border-color: #3b82f6;
     }
 
     /* Gradient Text */
