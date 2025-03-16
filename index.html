@@ -562,21 +562,32 @@
           const filterValue = badge.getAttribute('data-filter-value');
           const filterKey = `${filterType}:${filterValue}`;
           
+          // Find all matching badges with the same filter type and value
+          const matchingBadges = document.querySelectorAll(`.tech-badge[data-filter-type="${filterType}"][data-filter-value="${filterValue}"]`);
+          
           // Toggle sub-filter
           const filterIndex = activeSubFilters.findIndex(f => f.key === filterKey);
           if (filterIndex === -1) {
-            // Add filter
+            // Add filter - store only one reference element for the filter
             activeSubFilters.push({
               key: filterKey,
               type: filterType,
               value: filterValue,
-              element: badge
+              element: badge  // Keep one reference element for removing the filter later
             });
-            badge.classList.add('active-sub-filter');
+            
+            // Add active class to ALL matching badges
+            matchingBadges.forEach(matchingBadge => {
+              matchingBadge.classList.add('active-sub-filter');
+            });
           } else {
             // Remove filter
             activeSubFilters.splice(filterIndex, 1);
-            badge.classList.remove('active-sub-filter');
+            
+            // Remove active class from ALL matching badges
+            matchingBadges.forEach(matchingBadge => {
+              matchingBadge.classList.remove('active-sub-filter');
+            });
           }
           
           // Update UI and apply filters
@@ -587,9 +598,9 @@
       
       // Clear sub-filters
       clearSubFiltersButton.addEventListener('click', () => {
-        // Remove active class from all sub-filters
-        activeSubFilters.forEach(filter => {
-          filter.element.classList.remove('active-sub-filter');
+        // Remove active class from all sub-filters by selecting all elements with the class
+        document.querySelectorAll('.tech-badge.active-sub-filter').forEach(badge => {
+          badge.classList.remove('active-sub-filter');
         });
         
         // Clear active sub-filters array
@@ -625,8 +636,13 @@
               const filterIndex = activeSubFilters.findIndex(f => f.key === filterKey);
               
               if (filterIndex !== -1) {
-                // Remove active class from badge
-                activeSubFilters[filterIndex].element.classList.remove('active-sub-filter');
+                const filter = activeSubFilters[filterIndex];
+                
+                // Find and remove active class from ALL matching badges
+                const matchingBadges = document.querySelectorAll(`.tech-badge[data-filter-type="${filter.type}"][data-filter-value="${filter.value}"]`);
+                matchingBadges.forEach(badge => {
+                  badge.classList.remove('active-sub-filter');
+                });
                 
                 // Remove from active filters
                 activeSubFilters.splice(filterIndex, 1);
@@ -697,7 +713,7 @@
           showCursor: true
         });
       }
-  
+
       // Apply social icon hover classes
       document.querySelectorAll('.social-links a').forEach(icon => {
         icon.classList.add('social-icon');
