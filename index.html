@@ -282,7 +282,7 @@
       pointer-events: auto !important;
     }
     
-    .qrcode-visible .bg-white {
+    .qrcode-visible #business-card {
       transform: scale(1) !important;
     }
     
@@ -311,7 +311,67 @@
     .pulse-animation {
       animation: pulse 2s infinite;
     }
-
+    
+    /* QR Code styling */
+    .qr-code-wrapper {
+      position: relative;
+      padding: 10px;
+    }
+    
+    .qr-code-frame {
+      position: relative;
+      padding: 16px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+    }
+    
+    .qr-code-frame::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: linear-gradient(90deg, #FFA500, #e76d2c);
+      z-index: -1;
+      border-radius: 14px;
+    }
+    
+    /* Scan line animation */
+    .scan-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, rgba(255, 165, 0, 0), #FFA500, rgba(231, 109, 44, 0.8), rgba(255, 165, 0, 0));
+      box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    
+    .qrcode-visible .scan-line {
+      animation: scanAnimation 2s ease-in-out forwards;
+    }
+    
+    @keyframes scanAnimation {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(300px);
+      }
+    }
+  
 
   </style>
 </head>
@@ -376,18 +436,24 @@
   </section>
 
   <div id="qrcode-container" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl transform transition-transform duration-300 scale-90 max-w-md w-full">
+    <div id="business-card" class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl transform transition-transform duration-300 scale-90 max-w-md w-full">
       <div class="flex justify-end mb-2">
         <button id="qrcode-close" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
       <div class="flex justify-center">
-        <img src="/assets/images/qrcode.png" alt="QR Code" class="w-64 h-64 object-contain">
+        <div class="qr-code-wrapper">
+          <div class="qr-code-frame">
+            <img src="/assets/images/qrcode.png" alt="QR Code" class="w-64 h-64 object-contain">
+            <div class="scan-line"></div>
+          </div>
+        </div>
       </div>
       <div class="mt-4 text-center">
         <h3 class="text-3xl font-bold">peptech<span class="gradient-text">.dev</span></h3>
         <p class="text-gray-600 dark:text-gray-400 text-lg mt-2">Software Developer</p>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mt-2"><em>Turning ideas into apps</em></p>
       </div>
     </div>
   </div>
@@ -868,8 +934,8 @@
       });
     });
 
-      // QR Code toggle functionality
-      const qrCodeToggle = document.getElementById('qrcode-toggle');
+    // QR Code toggle functionality
+    const qrCodeToggle = document.getElementById('qrcode-toggle');
     const qrCodeContainer = document.getElementById('qrcode-container');
     const qrCodeClose = document.getElementById('qrcode-close');
     
@@ -885,15 +951,6 @@
     qrCodeToggle.addEventListener('click', function(e) {
       e.preventDefault();
       qrCodeContainer.classList.add('qrcode-visible');
-      
-      // Add scale animation to the QR code image
-      const qrCodeImage = qrCodeContainer.querySelector('img');
-      qrCodeImage.style.transition = 'transform 0.5s ease';
-      qrCodeImage.style.transform = 'scale(0.9)';
-      
-      setTimeout(() => {
-        qrCodeImage.style.transform = 'scale(1)';
-      }, 100);
     });
     
     // Hide QR code when clicking the close button
