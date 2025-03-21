@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.filter-tag.active {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.project-card .card-content {
+  display: flex;
+  flex-direction: column;
+  height: 200px; /* Adjust this value based on your needs */
+}
+
+.project-card .description {
+  flex-grow: 1;
+}
+
+.project-card .card-footer {
+  margin-top: auto;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Image hover effects */
+.project-card .aspect-w-16 {
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card .aspect-w-16 img {
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.project-card:hover .aspect-w-16 img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.project-card:hover .aspect-w-16::after {
+  opacity: 1;
+}
+
+/* Updated tech-badge styling */
+.tech-badge {
+  background-color: rgba(226, 232, 240, 0.8); /* Lighter bg color (light mode) */
+  color: #475569; /* Slate-600 color for better contrast */
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(226, 232, 240, 0.9); /* Subtle border */
+}
+
+.dark .tech-badge {
+  background-color: rgba(51, 65, 85, 0.4); /* Darker but more transparent (dark mode) */
+  color: #cbd5e1; /* Slate-300 for dark mode */
+  border: 1px solid rgba(71, 85, 105, 0.6); /* Subtle border for dark mode */
+}
+
+.tech-badge:hover {
+  transform: translateY(-1px);
+  border-color: #3b82f6; /* Blue highlight on hover */
+}
+
+.tech-badge.active-sub-filter {
+  background-color: rgba(59, 130, 246, 0.15); /* Very light blue background */
+  color: #2563eb; /* Blue-600 */
+  border-color: #3b82f6; /* Blue border */
+}
+
+.dark .tech-badge.active-sub-filter {
+  background-color: rgba(59, 130, 246, 0.2); /* Slight blue tint for dark mode */
+  color: #93c5fd; /* Blue-300 for dark mode */
+  border-color: #3b82f6; /* Blue border */
+}
+
+/* Filter tag styling updates to match */
+.filter-tag {
+  background-color: rgba(226, 232, 240, 0.8);
+  color: #475569;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  transition: all 0.2s ease;
+}
+
+.dark .filter-tag {
+  background-color: rgba(51, 65, 85, 0.4);
+  color: #cbd5e1;
+  border: 1px solid rgba(71, 85, 105, 0.6);
+}
+
+.filter-tag:hover {
+  border-color: #3b82f6;
+}
+
+.filter-tag.active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+  border-color: #3b82f6;
+}
+
+.dark .filter-tag.active {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border-color: #3b82f6;
+}
+
+/* Gradient Text */
+.gradient-text {
+  /* // https://www.eggradients.com/category/orange-gradient */
+  background: linear-gradient(90deg, #FFA500, #e76d2c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline;
+}
+
+/* Hover Animations for Icons */
+.social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: #3b82f6;
+}
+
+/* Improved Button Hover */
+.button-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  transition: all 0.5s ease;
+}
+
+.button-hover:hover:before {
+  left: 100%;
+}
+
+/* Enhanced project card hover */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add relative positioning to project card aspect container */
+.project-card .aspect-w-16 {
+  position: relative;
+}
+
+/* Additional styles for active sub-filters */
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.filter-pill-remove {
+  margin-left: 0.25rem;
+  font-size: 1rem;
+  line-height: 0.5;
+  cursor: pointer;
+}
+
+/* QR Code modal styles */
+.qrcode-visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.qrcode-visible #business-card {
+  transform: scale(1) !important;
+}
+
+/* Add styles for the close button hover */
+#qrcode-close {
+  transition: transform 0.2s ease;
+}
+
+#qrcode-close:hover {
+  transform: rotate(90deg);
+}
+
+/* Add a pulsing animation to the QR code icon to draw attention */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* QR Code styling */
+.qr-code-wrapper {
+  position: relative;
+  padding: 10px;
+}
+
+.qr-code-frame {
+  position: relative;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.qr-code-frame::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(90deg, #FFA500, #e76d2c);
+  z-index: -1;
+  border-radius: 14px;
+}
+
+/* Scan line animation */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 165, 0, 0), #FFA500, rgba(231, 109, 44, 0.8), rgba(255, 165, 0, 0));
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.qrcode-visible .scan-line {
+  animation: scanAnimation 2s ease-in-out forwards;
+}
+
+@keyframes scanAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+}
