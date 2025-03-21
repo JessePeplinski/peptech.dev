@@ -180,6 +180,117 @@
   color: #3b82f6;
 }
 
+/* Primary button styles */
+.btn-primary {
+  background-color: #000;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient animation for primary button */
+.btn-primary.gradient-btn {
+  background: linear-gradient(90deg, #FFA500, #e76d2c);
+  border: none;
+  color: white;
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+
+.btn-primary.gradient-btn:hover {
+  background-position: right center;
+}
+
+.dark .btn-primary {
+  background-color: #1f2937; /* Darker shade for dark mode */
+}
+
+.btn-primary:hover {
+  background-color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .btn-primary:hover {
+  background-color: #374151;
+}
+
+/* Secondary button styles */
+.btn-secondary {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .btn-secondary {
+  color: white;
+  border-color: #4b5563; /* Gray-600 for dark mode */
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect for both buttons */
+.btn-primary:before, .btn-secondary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  transition: all 0.5s ease;
+}
+
+.btn-primary:hover:before, .btn-secondary:hover:before {
+  left: 100%;
+}
+
+/* Button spacing for contact section */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* For smaller screens, stack buttons */
+@media (max-width: 640px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 /* Improved Button Hover */
 .button-hover {
   position: relative;
