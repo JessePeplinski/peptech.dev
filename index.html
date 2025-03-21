@@ -55,15 +55,33 @@
 </script>
   
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
-  <!-- Navbar -->
+  <!-- Navbar with Hamburger Menu -->
   <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 md:px-6 py-3">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <span class="text-xl font-bold"><span class="gradient-text">Pep Tech</span></span>
-      <div class="flex items-center space-x-4">
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-4">
         <a href="#about" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">About</a>
         <a href="#projects" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Projects</a>
         <a href="#contact" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Contact</a>
       </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden py-2 px-4 mt-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <a href="#about" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">About</a>
+      <a href="#projects" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Projects</a>
+      <a href="#contact" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Contact</a>
     </div>
   </nav>
 
@@ -433,5 +451,6 @@
 
   <!-- Custom Script -->
   <script src="script.js"></script>
+  <script src="mobileMenu.js"></script>
 </body>
 </html>

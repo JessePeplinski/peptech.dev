@@ -55,20 +55,45 @@
 </script>
   
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
-  <!-- Navbar -->
+  <!-- Navbar with Hamburger Menu for work.html -->
   <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 md:px-6 py-3">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold"><span class="gradient-text">Pep Tech</span></a>
-      <div class="flex items-center space-x-3">
-        <a href="index.html" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Home</a>
+      <a href="index.html"><span class="text-xl font-bold"><span class="gradient-text">Pep Tech</span></span></a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- Update these links to match your work.html navigation -->
         <a href="#mission" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Mission</a>
         <a href="#values" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Values</a>
         <a href="#process" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Process</a>
         <a href="#timeline" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Timeline</a>
+        <a href="#process" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Process</a>
         <a href="#pricing" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Pricing</a>
         <a href="#faq" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">FAQ</a>
         <a href="#contact" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Contact</a>
       </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden py-2 px-4 mt-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <!-- Update these links to match your work.html navigation -->
+      <a href="#mission" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Mission</a>
+      <a href="#values" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Values</a>
+      <a href="#process" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Process</a>
+      <a href="#timeline" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Timeline</a>
+      <a href="#process" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Process</a>
+      <a href="#pricing" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Pricing</a>
+      <a href="#faq" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">FAQ</a>
+      <a href="#contact" class="block py-2 text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition">Contact</a>
     </div>
   </nav>
 
@@ -534,6 +559,6 @@
   </script>
 
   <!-- Custom Script -->
-  <script src="script.js"></script>
+  <script src="mobileMenu.js"></script>
 </body>
 </html>

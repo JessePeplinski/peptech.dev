@@ -327,3 +327,57 @@
     transform: translateY(300px);
   }
 }
+
+/* Hamburger Menu Styles */
+#mobile-menu {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+#mobile-menu a {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+}
+
+#mobile-menu a:hover {
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+/* Hamburger icon animation */
+.hamburger-icon {
+  transition: transform 0.3s ease;
+}
+
+.hamburger-icon line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-icon.open line:nth-child(1) {
+  transform: translate(0, 6px) rotate(45deg);
+}
+
+.hamburger-icon.open line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open line:nth-child(3) {
+  transform: translate(0, -6px) rotate(-45deg);
+}
+
+/* Mobile Menu Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#mobile-menu:not(.hidden) {
+  animation: slideDown 0.3s ease forwards;
+}
