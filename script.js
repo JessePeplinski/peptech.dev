@@ -219,12 +219,13 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typedElement) {
     new Typed('#typed-text', {
       strings: [
-        'ideas into apps.',
-        'concepts into code.',
-        'designs into reality.',
+        'turn ideas into apps.',
+        'turn concepts into code.',
+        'bring designs to life.',
+        'create 2D browser games.',
       ],
-      typeSpeed: 50,
-      backSpeed: 30,
+      typeSpeed: 30,
+      backSpeed: 15,
       backDelay: 2000,
       loop: true,
       showCursor: true
