@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Elements
   const filterButtons = document.querySelectorAll('.filter-tag');
   const projectCards = document.querySelectorAll('.project-card');
+  const projectContainer = document.querySelector('.grid');
   const techBadges = document.querySelectorAll('.tech-badge');
   const activeSubFiltersContainer = document.getElementById('active-sub-filters');
   const activeFilterTags = document.getElementById('active-filter-tags');
@@ -10,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Track active filters
   let activeMainFilter = 'all';
   let activeSubFilters = [];
+
+  // Sort project cards by date (newest first)
+  sortProjectsByDate();
 
   // Main filter functionality (enhanced)
   filterButtons.forEach(button => {
@@ -167,6 +171,47 @@ document.addEventListener('DOMContentLoaded', function () {
       // Show/hide card
       card.style.display = visible ? 'block' : 'none';
     });
+  }
+  
+  // Sort projects by date (newest first)
+  function sortProjectsByDate() {
+    const projectContainer = document.querySelector('.grid');
+    if (!projectContainer) return;
+    
+    // Convert NodeList to Array for sorting
+    const projectArray = Array.from(projectCards);
+    
+    // Sort projects by date (newest first)
+    projectArray.sort((a, b) => {
+      const dateA = getProjectDate(a);
+      const dateB = getProjectDate(b);
+      
+      // Sort in descending order (newest first)
+      return dateB - dateA;
+    });
+    
+    // Re-append projects in sorted order
+    projectArray.forEach(card => {
+      projectContainer.appendChild(card);
+    });
+  }
+  
+  // Helper function to parse date from project card
+  function getProjectDate(card) {
+    const dateElement = card.querySelector('.text-xs.text-gray-500');
+    if (!dateElement) return 0;
+    
+    const dateText = dateElement.textContent.trim();
+    const [month, year] = dateText.split(', ');
+    
+    // Convert month name to number
+    const monthMap = {
+      'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5,
+      'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11
+    };
+    
+    // Create Date object (use 1 as the day)
+    return new Date(parseInt(year), monthMap[month] || 0, 1);
   }
 
   // Initialize typed.js and smooth scrolling (existing code)
