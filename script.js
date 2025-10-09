@@ -236,6 +236,75 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.social-links a').forEach(icon => {
     icon.classList.add('social-icon');
   });
+
+  const normalizeMainFilter = (value = '') => {
+  const v = String(value).toLowerCase();
+  const map = {
+    websites: 'website', website: 'website',
+    webapps:  'webapp',  webapp:  'webapp',
+    games:    'game',    game:    'game',
+    all:      'all'
+  };
+  return map[v] || null;
+};
+
+const pluralizeForURL = (filter) => {
+  if (filter === 'website') return 'websites';
+  if (filter === 'webapp')  return 'webapps';
+  if (filter === 'game')    return 'games';
+  return 'all';
+};
+
+// read ONLY the query param (?filter=...)
+const getFilterFromURL = () => {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('filter'); // only this
+  return normalizeMainFilter(q) || 'all';
+};
+
+const setMainFilter = (filter, { updateURL = true, push = false } = {}) => {
+  // button UI
+  filterButtons.forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.filter-tag[data-filter="${filter}"]`)?.classList.add('active');
+
+  // update + apply
+  activeMainFilter = filter;
+  applyFilters();
+
+  // write ONLY the ?filter param (leave other params intact)
+  if (updateURL) {
+    const url = new URL(window.location.href);
+    if (filter === 'all') {
+      url.searchParams.delete('filter');
+    } else {
+      url.searchParams.set('filter', pluralizeForURL(filter));
+    }
+    (push ? history.pushState : history.replaceState)({ filter }, '', url.toString());
+  }
+};
+
+// back/forward → re-apply based on query param
+window.addEventListener('popstate', () => {
+  setMainFilter(getFilterFromURL(), { updateURL: false });
+});
+
+// ----- initialization (call this after sortProjectsByDate()) -----
+setMainFilter(getFilterFromURL(), { updateURL: false });
+
+// Optional: only scroll if ?filter exists
+(() => {
+  const hasFilter = new URLSearchParams(window.location.search).has('filter');
+  if (hasFilter) document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+})();
+
+// Wire buttons to update query param
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.getAttribute('data-filter'); // 'all' | 'website' | 'webapp' | 'game'
+    setMainFilter(filter, { updateURL: true, push: true });
+  });
+});
+
 });
 
 // QR Code toggle functionality
