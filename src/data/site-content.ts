@@ -199,8 +199,8 @@ export const marketingPricing: PricingPackage = {
   ],
 };
 
-export const appPricing: PricingPackage = {
-  name: 'Custom App Development',
+export const appBuild: PricingPackage = {
+  name: 'Custom App Build',
   price: '$7,500+',
   description: 'A custom application built to solve your specific business challenges. Scoped and priced based on your needs.',
   features: [
@@ -209,9 +209,34 @@ export const appPricing: PricingPackage = {
     'User roles and permissions',
     'Custom dashboard & reporting',
     'User training',
-    'Ongoing maintenance & support',
   ],
 };
+
+export const appMonthly: PricingPackage[] = [
+  {
+    name: 'Essentials',
+    price: '$150/mo',
+    description: 'Keep your app running smoothly with hosting, security, and peace of mind.',
+    features: [
+      'Hosting & uptime monitoring',
+      'Security updates & patches',
+      'Database maintenance & backups',
+      'Bug fixes for existing functionality',
+      'Email support',
+    ],
+  },
+  {
+    name: 'Growth',
+    price: '$300/mo',
+    description: 'Everything in Essentials, plus proactive improvements to keep your app evolving.',
+    features: [
+      'Everything in Essentials',
+      'Monthly analytics & performance report',
+      'Monthly 30-minute strategy call',
+    ],
+    popular: true,
+  },
+];
 
 export const faqs: FAQItem[] = [
   {
