@@ -276,6 +276,18 @@ export const faqs: FAQItem[] = [
     question: 'Do you use AI to build websites?',
     answer: 'Yes. I use AI-assisted development to build faster and deliver more for less. I have 8+ years of experience building websites the traditional way — AI is a tool that accelerates my workflow, not a replacement for expertise.',
   },
+  {
+    question: "Are you just a vibe coder looking to make a quick buck?",
+    answer: "No. I'm a software engineer by trade with 8+ years of professional experience. I'm deeply invested in this work. There's a new wave of \"vibe coders\" who don't actually understand the code they're shipping — and eventually that's going to bite them and their clients. I write code I understand, I debug problems myself, and I stand behind everything I build.",
+  },
+  {
+    question: 'Do you build apps that handle PII (personally identifiable information)?',
+    answer: 'Yes. Security is first and foremost in all my engineering decisions. All data is encrypted in transit and at rest. I follow industry best practices for handling sensitive information — secure authentication, role-based access, and regular security audits are baked into every project.',
+  },
+  {
+    question: 'Do you build apps that handle PHI (protected health information)?',
+    answer: "Not at the moment — HIPAA compliance introduces a level of complexity that's tricky to navigate with my current stack. That said, reach out anyway and let's see if we can figure something out together.",
+  },
 ];
 
 export const projects: Project[] = [
