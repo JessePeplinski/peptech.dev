@@ -1,12 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { faqs } from '../data/site-content';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
 ---
 
 <BaseLayout
   title="FAQ - Pep Tech"
   description="Frequently asked questions about Pep Tech's website development, custom apps, pricing, and process."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <section class="py-16">
     <div class="max-w-6xl mx-auto px-6">
       <div class="max-w-4xl mx-auto">

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peptech.dev/sitemap-index.xml

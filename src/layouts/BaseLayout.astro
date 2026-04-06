@@ -21,7 +21,11 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://peptech.dev').href;
   <title>{title}</title>
   <meta name="description" content={description}>
   <meta name="author" content="Jesse Peplinski">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0f1a">
+  <meta name="geo.placename" content="Syracuse, NY">
+  <meta name="geo.position" content="43.0481;-76.1474">
+  <meta name="ICBM" content="43.0481, -76.1474">
   <link rel="canonical" href={canonicalUrl}>
 
   <!-- Open Graph -->
@@ -62,20 +66,44 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://peptech.dev').href;
     })();
   </script>
 
-  <!-- Structured Data: ProfessionalService -->
+  <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     "name": "Pep Tech",
     "url": "https://peptech.dev",
     "description": "I help small business owners solve core problems with technology. Custom websites and apps that save you time, money, and deliver exceptional experiences for your customers.",
+    "image": "https://peptech.dev/images/peptechlogo.png",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Syracuse",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.0481,
+      "longitude": -76.1474
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Syracuse",
+        "sameAs": "https://en.wikipedia.org/wiki/Syracuse,_New_York"
+      },
+      {
+        "@type": "State",
+        "name": "New York"
+      }
+    ],
     "founder": {
       "@type": "Person",
       "name": "Jesse Peplinski",
       "url": "https://jessepeplinski.com"
     },
-    "areaServed": "Syracuse, NY",
+    "knowsAbout": ["Web Development", "Custom Applications", "Mobile Apps", "Next.js", "Sanity CMS", "AI-Assisted Development"],
     "sameAs": [
       "https://x.com/peptech_",
       "https://github.com/jessepeplinski",
