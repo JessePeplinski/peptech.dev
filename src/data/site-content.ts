@@ -47,8 +47,9 @@ export const mission: string[] = [
 ];
 
 export const aboutMe: string[] = [
-  "I created my first website for a local sandwich shop in 2015. The owners didn't have time to focus on their digital needs — that's where I stepped in. When the site launched, it helped them reach new customers and generate more revenue. Seeing their reaction meant the world. I've been building websites long before the emergence of AI.",
-  "I've also been on the other side — hiring someone to build a website. We went weeks over schedule and over budget. Too many cooks in the kitchen. As a small business owner, you want to pick up the phone and get an answer, not get bogged down going back and forth between a project manager, developers, and designers. That model just doesn't work with a limited budget. So you'll work with me — directly.",
+  "I created my first website for a local sandwich shop in 2015. The owners didn't have time to focus on their digital needs — that's where I stepped in. When the site launched, it helped them reach new customers and generate more revenue. Seeing their reaction meant the world.",
+  "I also have 8+ years of experience working with enterprise CMS systems like Sitecore and AEM Sites. I know the pain points. I know what works and what doesn't. I was building websites well before AI emerged onto the scene — AI simply enables me to build them faster now.",
+  "I've also been on the other side — hiring someone to build a website. We went weeks over schedule and over budget. As a small business owner, you shouldn't need to go through a project manager, a designer, and a developer just to get a simple answer. That model just doesn't work with a limited budget. So you'll work with me — directly.",
   "I typically start by building you a website. It's the fastest way to see how I work and build trust. From there, we can tackle bigger challenges — custom apps, automation, SaaS solutions — whatever moves your business forward.",
   "My approach is guided by three core values:",
 ];
