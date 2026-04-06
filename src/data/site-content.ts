@@ -180,25 +180,12 @@ export const websiteMonthly: PricingPackage[] = [
       'Unlimited content updates',
       'Monthly analytics, SEO, and GEO report',
       'Performance optimization',
+      'Initial marketing strategy guide',
     ],
     popular: true,
   },
 ];
 
-export const marketingPricing: PricingPackage = {
-  name: 'Marketing',
-  price: '$300/mo',
-  description: 'Ongoing marketing support to grow your online presence and reach new customers.',
-  features: [
-    'Social media management (2-3 posts/week)',
-    'Google Business Profile optimization',
-    'Review monitoring & response templates',
-    'Monthly performance report',
-    'Basic Google Ads management',
-    'Email newsletter (1/month)',
-    'Monthly 15-minute strategy call',
-  ],
-};
 
 export const appBuild: PricingPackage = {
   name: 'Custom App Build',
@@ -287,6 +274,10 @@ export const faqs: FAQItem[] = [
   {
     question: "Are you just a vibe coder looking to make a quick buck?",
     answer: "No. I'm a software engineer by trade with 8+ years of professional experience. I'm deeply invested in this work. There's a new wave of \"vibe coders\" who don't actually understand the code they're shipping — and eventually that's going to bite them and their clients. I write code I understand, I debug problems myself, and I stand behind everything I build.",
+  },
+  {
+    question: 'Do you offer marketing services?',
+    answer: "My focus is on building — websites, apps, and custom solutions. That said, every Growth plan includes an initial marketing strategy guide to help you get started with SEO, social media, and local search. If you need ongoing marketing support, I'm happy to discuss it, but I'd rather spend my time building technology that moves your business forward.",
   },
   {
     question: 'Do you build apps that handle PII (personally identifiable information)?',

@@ -87,14 +87,6 @@
               <p class="text-sm font-medium text-[var(--color-brand-orange)] mt-1">Let's talk</p>
             </div>
           </label>
-          <label class="service-option flex items-start gap-4 p-4 rounded-lg border border-[var(--color-surface-border)] bg-[var(--color-surface)] cursor-pointer hover:border-[var(--color-brand-orange)]/50 transition-colors">
-            <input type="checkbox" name="service" value="marketing" class="mt-1 accent-[var(--color-brand-orange)] cursor-pointer" />
-            <div>
-              <span class="font-semibold text-lg">Marketing</span>
-              <p class="text-sm text-[var(--color-text-secondary)]">Social media, Google Ads, email newsletters, and more</p>
-              <p class="text-sm font-medium text-[var(--color-brand-orange)] mt-1">$300/mo</p>
-            </div>
-          </label>
         </div>
       </div>
 
@@ -295,10 +287,6 @@
       onetime: 0, onetimeLabel: 'Custom quote', serviceName: 'Mobile App', deposit: '$2,000',
       plans: [] // Pricing varies — no standard monthly tiers
     },
-    'marketing': {
-      onetime: 0, onetimeLabel: '$0', serviceName: 'Marketing', deposit: null,
-      plans: [] // No monthly plan selection needed — flat $300/mo
-    },
   };
 
   function getSelectedServices(): string[] {
@@ -307,10 +295,6 @@
 
   function getSelectedPlanFor(service: string): string {
     return (document.querySelector<HTMLInputElement>(`input[name="plan-${service}"]:checked`))?.value || '';
-  }
-
-  function hasMarketing(): boolean {
-    return getSelectedServices().includes('marketing');
   }
 
   function getEstimate() {
@@ -324,12 +308,6 @@
     for (const svc of services) {
       const p = pricing[svc];
       if (!p) continue;
-
-      if (svc === 'marketing') {
-        totalMonthly += 300;
-        parts.push('Marketing ($300/mo)');
-        continue;
-      }
 
       if (p.onetime > 0) {
         totalOnetime += p.onetime;
@@ -379,12 +357,6 @@
     for (const svc of services) {
       const p = pricing[svc];
       if (!p) continue;
-
-      if (svc === 'marketing') {
-        html += '<div class="flex justify-between items-center"><span class="text-[var(--color-text-secondary)]">Marketing</span><span class="font-semibold">$300/mo</span></div>';
-        html += '<div class="border-t border-[var(--color-surface-border)]"></div>';
-        continue;
-      }
 
       html += `<div class="flex justify-between items-center"><span class="text-[var(--color-text-secondary)]">${p.serviceName} Build</span><span class="font-semibold">${p.onetimeLabel}</span></div>`;
       if (p.deposit) {
@@ -443,13 +415,8 @@
   }
 
   function populatePlans() {
-    const services = getSelectedServices().filter(svc => svc !== 'marketing');
+    const services = getSelectedServices();
     const container = document.getElementById('plan-options')!;
-
-    if (services.length === 0) {
-      container.innerHTML = '<p class="text-[var(--color-text-muted)] text-center py-4">No services selected that require a monthly plan. Click Next to continue.</p>';
-      return;
-    }
 
     container.innerHTML = services.map(svc => {
       const p = pricing[svc];
@@ -548,7 +515,7 @@
     }
     if (currentStep === 2) {
       // Validate all services (except marketing) have a plan selected
-      const services = getSelectedServices().filter(svc => svc !== 'marketing');
+      const services = getSelectedServices();
       let allSelected = true;
       for (const svc of services) {
         if (!getSelectedPlanFor(svc)) {

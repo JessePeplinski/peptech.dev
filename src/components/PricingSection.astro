@@ -1,5 +1,5 @@
 ---
-import { websiteBuild, websiteMonthly, appBuild, appMonthly, marketingPricing } from '../data/site-content';
+import { websiteBuild, websiteMonthly, appBuild, appMonthly } from '../data/site-content';
 
 const checkIcon = `<svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>`;
 ---
@@ -22,10 +22,7 @@ const checkIcon = `<svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" view
         <button type="button" id="apps-tab" class="service-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border-t border-b border-[var(--color-surface-border)] hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
           Custom Apps
         </button>
-        <button type="button" id="marketing-tab" class="service-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border border-[var(--color-surface-border)] hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
-          Marketing
-        </button>
-        <button type="button" id="mobile-tab" class="service-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border-t border-b border-r border-[var(--color-surface-border)] rounded-r-lg hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
+        <button type="button" id="mobile-tab" class="service-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border border-[var(--color-surface-border)] rounded-r-lg hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
           Mobile Apps
         </button>
       </div>
@@ -201,31 +198,11 @@ const checkIcon = `<svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" view
       </div>
     </div>
 
-    <!-- Marketing Content -->
-    <div id="marketing-content" class="service-content hidden">
-      <div class="bg-[var(--color-surface)] rounded-lg overflow-hidden shadow-md border border-[var(--color-surface-border)] card-hover max-w-3xl mx-auto">
-        <div class="p-6 md:p-8">
-          <h3 class="text-xl font-bold mb-2">{marketingPricing.name}</h3>
-          <p class="text-3xl font-bold mb-4 gradient-text">{marketingPricing.price}</p>
-          <p class="text-[var(--color-text-secondary)] mb-4">{marketingPricing.description}</p>
-          <ul class="space-y-2">
-            {marketingPricing.features.map((feature) => (
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <script>
-  const tabs = ['websites', 'apps', 'mobile', 'marketing'];
+  const tabs = ['websites', 'apps', 'mobile'];
 
   tabs.forEach(tab => {
     const btn = document.getElementById(`${tab}-tab`);
