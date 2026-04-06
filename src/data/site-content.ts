@@ -221,6 +221,15 @@ export const faqs: FAQItem[] = [
 
 export const projects: Project[] = [
   {
+    name: 'Personal Website',
+    description: 'Professional portfolio and blog built with Astro, Tailwind CSS, and Claude Code.',
+    image: '/images/projects/personal-website.png',
+    buildTime: 'Built in 1 week',
+    date: 'March, 2025',
+    url: 'https://jessepeplinski.com/',
+    cta: 'Visit Site',
+  },
+  {
     name: 'Wedding Website',
     description: 'A custom wedding website with RSVP management and event details.',
     image: '/images/projects/foreverpeplinski.png',
