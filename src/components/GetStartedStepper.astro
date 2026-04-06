@@ -208,9 +208,33 @@
           </div>
         </div>
 
-        <p class="text-sm text-[var(--color-text-muted)] text-center mb-6">
-          This is an estimate — we'll confirm the details together. No surprises. You should expect a response from me within 24 hours.
-        </p>
+        <!-- What happens next -->
+        <div class="bg-[var(--color-surface)] rounded-lg border border-[var(--color-surface-border)] p-6 mb-6">
+          <h4 class="font-semibold mb-4">What happens next</h4>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-brand-orange)]/10 text-[var(--color-brand-orange)] flex items-center justify-center text-xs font-bold">1</span>
+              <p class="text-sm text-[var(--color-text-secondary)]">I'll respond within <strong class="text-[var(--color-text-primary)]">24 hours</strong> (M-F, 9am - 5pm). If I need more info, I'll reach out first.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-brand-orange)]/10 text-[var(--color-brand-orange)] flex items-center justify-center text-xs font-bold">2</span>
+              <p class="text-sm text-[var(--color-text-secondary)]">We meet and agree on a <strong class="text-[var(--color-text-primary)]">non-refundable deposit</strong> (applies to your total if you move forward).</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-brand-orange)]/10 text-[var(--color-brand-orange)] flex items-center justify-center text-xs font-bold">3</span>
+              <p class="text-sm text-[var(--color-text-secondary)]">I build your demo and send you a <strong class="text-[var(--color-text-primary)]">live URL</strong> to review.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-brand-orange)]/10 text-[var(--color-brand-orange)] flex items-center justify-center text-xs font-bold">4</span>
+              <p class="text-sm text-[var(--color-text-secondary)]">We meet for <strong class="text-[var(--color-text-primary)]">1 hour</strong> and I prototype your feedback — virtually or in person in Syracuse.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-6 text-center">
+          <p class="text-sm text-green-400 font-medium">Submitting this form is free — no payment is collected until we meet and agree.</p>
+          <p class="text-sm text-green-400 mt-1">This is an estimate — we'll confirm the details together. No surprises.</p>
+        </div>
       </div>
 
       <!-- Navigation buttons -->
@@ -249,29 +273,29 @@
   let currentStep = 1;
 
   interface Plan { name: string; price: number; label: string; features: string[] }
-  interface ServicePricing { onetime: number; onetimeLabel: string; serviceName: string; plans: Plan[] }
+  interface ServicePricing { onetime: number; onetimeLabel: string; serviceName: string; deposit: string | null; plans: Plan[] }
 
   const pricing: Record<string, ServicePricing> = {
     'website': {
-      onetime: 3000, onetimeLabel: '$3,000', serviceName: 'Website',
+      onetime: 3000, onetimeLabel: '$3,000', serviceName: 'Website', deposit: '$500',
       plans: [
         { name: 'Essentials', price: 50, label: '$50/mo', features: ['Hosting & uptime monitoring', 'Security updates & patches', 'Content updates available at $150/hr', 'Email support'] },
         { name: 'Growth', price: 150, label: '$150/mo', features: ['Everything in Essentials', 'Unlimited content updates', 'Monthly analytics, SEO, and GEO report', 'Performance optimization'] },
       ]
     },
     'custom-app': {
-      onetime: 7500, onetimeLabel: '$7,500+', serviceName: 'Custom App',
+      onetime: 7500, onetimeLabel: '$7,500+', serviceName: 'Custom App', deposit: '$1,500',
       plans: [
         { name: 'Essentials', price: 150, label: '$150/mo', features: ['Hosting & uptime monitoring', 'Security updates & patches', 'Database maintenance & backups', 'Bug fixes for existing functionality', 'Email support'] },
         { name: 'Growth', price: 300, label: '$300/mo', features: ['Everything in Essentials', 'Monthly analytics & performance report', 'Monthly 30-minute strategy call'] },
       ]
     },
     'mobile-app': {
-      onetime: 0, onetimeLabel: 'Custom quote', serviceName: 'Mobile App',
+      onetime: 0, onetimeLabel: 'Custom quote', serviceName: 'Mobile App', deposit: '$2,000',
       plans: [] // Pricing varies — no standard monthly tiers
     },
     'marketing': {
-      onetime: 0, onetimeLabel: '$0', serviceName: 'Marketing',
+      onetime: 0, onetimeLabel: '$0', serviceName: 'Marketing', deposit: null,
       plans: [] // No monthly plan selection needed — flat $300/mo
     },
   };
@@ -362,6 +386,9 @@
       }
 
       html += `<div class="flex justify-between items-center"><span class="text-[var(--color-text-secondary)]">${p.serviceName} Build</span><span class="font-semibold">${p.onetimeLabel}</span></div>`;
+      if (p.deposit) {
+        html += `<div class="flex justify-between items-center mt-1"><span class="text-xs text-[var(--color-text-muted)]">Non-refundable deposit (applies to total)</span><span class="text-xs text-[var(--color-text-muted)]">${p.deposit}</span></div>`;
+      }
       html += '<div class="border-t border-[var(--color-surface-border)]"></div>';
 
       const planName = getSelectedPlanFor(svc);

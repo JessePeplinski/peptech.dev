@@ -148,7 +148,7 @@ export const appExamples: Value[] = [
 export const websiteBuild: PricingPackage = {
   name: 'Website Build',
   price: '$3,000',
-  description: 'A complete, professional website built specifically for your business. One-time cost.',
+  description: 'A complete, professional website built specifically for your business. One-time cost. $500 non-refundable deposit to get started.',
   features: [
     'Custom design tailored to your brand',
     'Responsive across all devices',
@@ -203,7 +203,7 @@ export const marketingPricing: PricingPackage = {
 export const appBuild: PricingPackage = {
   name: 'Custom App Build',
   price: '$7,500+',
-  description: 'A custom application built to solve your specific business challenges. Scoped and priced based on your needs.',
+  description: 'A custom application built to solve your specific business challenges. Scoped and priced based on your needs. $1,500 non-refundable deposit to get started.',
   features: [
     'Custom designed solution',
     'Integration with existing systems',
@@ -275,6 +275,14 @@ export const faqs: FAQItem[] = [
   {
     question: 'Do you use AI to build websites?',
     answer: 'Yes. I use AI-assisted development to build faster and deliver more for less. I have 8+ years of experience building websites the traditional way — AI is a tool that accelerates my workflow, not a replacement for expertise.',
+  },
+  {
+    question: 'Do I work directly with you, or is there a team?',
+    answer: "You work directly with me — no middlemen, no handoffs between a project manager, designer, and developer. I'm the single point of contact from start to finish.",
+  },
+  {
+    question: 'How is your pricing structured?',
+    answer: "Flat, transparent pricing — no surprises. You'll see an estimate before we start, and we'll confirm the details together. No scope creep, no change orders, no surprise invoices.",
   },
   {
     question: "Are you just a vibe coder looking to make a quick buck?",
