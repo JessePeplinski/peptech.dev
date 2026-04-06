@@ -292,11 +292,20 @@ export const faqs: FAQItem[] = [
 
 export const projects: Project[] = [
   {
+    name: 'Gridiron Rumble',
+    description: 'A 2D arcade style mobile-first football game. Designed the full system: game engine, Astro marketing site with devlogs, iOS and Steam integration. Currently available on TestFlight.',
+    image: '/images/projects/gridiron-rumble.png',
+    buildTime: 'Built in 1 month',
+    date: 'April, 2026',
+    url: 'https://www.gridironrumble.com/',
+    cta: 'Visit Site',
+  },
+  {
     name: 'Personal Website',
     description: 'Professional portfolio and blog built with Astro, Tailwind CSS, and Claude Code.',
     image: '/images/projects/personal-website.png',
     buildTime: 'Built in 1 week',
-    date: 'March, 2025',
+    date: 'April, 2026',
     url: 'https://jessepeplinski.com/',
     cta: 'Visit Site',
   },
