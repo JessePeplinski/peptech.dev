@@ -242,23 +242,39 @@ export const appMonthly: PricingPackage[] = [
 export const faqs: FAQItem[] = [
   {
     question: 'How long does it take to build a website?',
-    answer: 'A typical website takes about 4-6 weeks from start to finish, including discovery, design, development, and launch. Simple static sites may be completed faster, while more complex dynamic sites may take longer.',
+    answer: 'You\'ll have a working demo in 1-2 weeks. From there, we refine it together until it\'s exactly what you want. Most websites are fully launched within 3-4 weeks.',
   },
   {
     question: 'Do you offer ongoing maintenance?',
-    answer: "Yes, I offer optional maintenance packages to keep your site secure, up-to-date, and running smoothly. This includes regular updates, security monitoring, and technical support. We can discuss these options after your project is completed.",
+    answer: 'Yes. I offer Essentials and Growth monthly plans that cover hosting, security updates, and ongoing support. You can see the full breakdown in the Investment section above.',
   },
   {
     question: 'What if I need changes after the site is launched?',
-    answer: "Minor changes and adjustments are covered during the 30-day support period after launch. For WordPress sites, I'll train you to make basic content updates yourself. For larger changes or new features, we can discuss additional development work at my hourly rate.",
+    answer: 'If you\'re on the Growth plan, content updates are unlimited. On the Essentials plan, content updates are available at $150/hr. For new features or major changes, we\'ll scope those separately.',
   },
   {
     question: 'What do I need to provide to get started?',
-    answer: "To get started, I'll need information about your business, your goals for the website, any branding materials you have (logo, colors, fonts), and content for the site (text, images, etc.). Don't worry if you don't have everything ready - I can help guide you through what's needed during our initial consultation.",
+    answer: 'Just fill out the Get Started form below. I\'ll need a basic understanding of your business, your goals, and any branding materials you have (logo, colors, fonts). Don\'t worry if you don\'t have everything ready — I can guide you through it.',
   },
   {
     question: 'Do you help with domain registration and hosting?',
-    answer: "Yes, I can assist with domain registration and recommend reliable hosting providers that suit your needs. I'll help set everything up so your website launches smoothly. The costs for domain registration and hosting are separate from my development fees.",
+    answer: 'Yes. I handle hosting as part of your monthly plan. I can also help with domain registration and DNS setup. Hosting is included in your monthly fee — domain registration costs are separate.',
+  },
+  {
+    question: 'What technology do you use to build websites?',
+    answer: 'I build modern websites using Next.js and Sanity CMS. This gives you a fast, SEO-optimized site with a user-friendly content management system so you can update your own content when needed.',
+  },
+  {
+    question: 'Can I update my own website content?',
+    answer: 'Yes. Every website I build includes Sanity CMS — a content management system that lets you update text, images, and other content yourself. I also provide a training session so you feel confident making changes.',
+  },
+  {
+    question: 'What\'s the difference between a website and a custom app?',
+    answer: 'A website is a marketing site — it tells people who you are, what you do, and how to reach you. A custom app solves a specific business problem — scheduling, inventory, customer portals, etc. Most clients start with a website and add custom apps later.',
+  },
+  {
+    question: 'Do you use AI to build websites?',
+    answer: 'Yes. I use AI-assisted development to build faster and deliver more for less. I have 8+ years of experience building websites the traditional way — AI is a tool that accelerates my workflow, not a replacement for expertise.',
   },
 ];
 

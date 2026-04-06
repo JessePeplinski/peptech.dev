@@ -1,12 +1,14 @@
 ---
 import { faqs } from '../data/site-content';
+
+const previewFaqs = faqs.slice(0, 5);
 ---
 
 <section id="faq" class="py-16">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
     <div class="space-y-6">
-      {faqs.map((faq) => (
+      {previewFaqs.map((faq) => (
         <div class="bg-[var(--color-surface-raised)] rounded-lg shadow-md border border-[var(--color-surface-border)] overflow-hidden">
           <button class="faq-toggle w-full text-left px-6 py-4 font-medium focus:outline-none flex justify-between items-center cursor-pointer">
             <span>{faq.question}</span>
@@ -19,6 +21,11 @@ import { faqs } from '../data/site-content';
           </div>
         </div>
       ))}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/faq" class="text-[var(--color-brand-orange)] font-medium hover:brightness-125 transition-all">
+        View all FAQs &rarr;
+      </a>
     </div>
   </div>
 </section>
