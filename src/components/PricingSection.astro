@@ -1,0 +1,159 @@
+---
+import { websitePricing, appPricing } from '../data/site-content';
+---
+
+<section id="investment" class="py-16 bg-[var(--color-surface-raised)]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Investment</h2>
+    <div class="mb-8 max-w-3xl">
+      <p class="text-lg text-[var(--color-text-secondary)]">
+        Below are my standard packages designed for small businesses looking to boost efficiency, improve customer experience, and save time. Whether you need a website, a custom app, or a mobile app — I've got you covered.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex rounded-md shadow-sm" role="group">
+        <button type="button" id="websites-tab" class="service-tab active-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border border-[var(--color-surface-border)] rounded-l-lg hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
+          Websites
+        </button>
+        <button type="button" id="apps-tab" class="service-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border-t border-b border-[var(--color-surface-border)] hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
+          Custom Apps
+        </button>
+        <button type="button" id="mobile-tab" class="service-tab py-2 px-4 text-sm font-medium bg-[var(--color-surface)] text-[var(--color-text-secondary)] border border-[var(--color-surface-border)] rounded-r-lg hover:bg-[var(--color-surface-raised)] transition cursor-pointer">
+          Mobile Apps
+        </button>
+      </div>
+    </div>
+
+    <!-- Websites Content -->
+    <div id="websites-content" class="service-content">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {websitePricing.map((pkg) => (
+          <div class="bg-[var(--color-surface)] rounded-lg overflow-hidden shadow-md border border-[var(--color-surface-border)] card-hover relative">
+            {pkg.popular && (
+              <div class="absolute top-0 right-0 bg-[var(--color-brand-orange)] text-white px-3 py-1 rounded-bl-lg text-xs font-bold">POPULAR</div>
+            )}
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{pkg.name}</h3>
+              <p class="text-3xl font-bold mb-4 gradient-text">{pkg.price}</p>
+              <p class="text-[var(--color-text-secondary)] mb-4">{pkg.description}</p>
+              <ul class="mb-6 space-y-2">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="bg-[var(--color-surface)] rounded-lg p-6 shadow-md border border-[var(--color-surface-border)] text-center max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold mb-3">Not sure which option is right for you?</h3>
+        <p class="text-[var(--color-text-secondary)] mb-4">
+          Contact me to discuss your goals, and I'll recommend the best path forward for your business.
+        </p>
+        <a href="#intake" class="btn-gradient">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- Apps Content -->
+    <div id="apps-content" class="service-content hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {appPricing.map((pkg) => (
+          <div class="bg-[var(--color-surface)] rounded-lg overflow-hidden shadow-md border border-[var(--color-surface-border)] card-hover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{pkg.name}</h3>
+              <p class="text-3xl font-bold mb-4 gradient-text">{pkg.price}</p>
+              <p class="text-[var(--color-text-secondary)] mb-4">{pkg.description}</p>
+              <ul class="mb-6 space-y-2">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="bg-[var(--color-surface)] rounded-lg p-6 shadow-md border border-[var(--color-surface-border)] text-center max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold mb-3">Ready to discuss your custom app?</h3>
+        <p class="text-[var(--color-text-secondary)] mb-4">
+          Let's schedule a discovery call to understand your business challenges and explore custom solutions.
+        </p>
+        <a href="#intake" class="btn-gradient">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- Mobile Apps Content -->
+    <div id="mobile-content" class="service-content hidden">
+      <div class="bg-[var(--color-surface)] rounded-lg p-8 shadow-md border border-[var(--color-surface-border)] max-w-3xl mx-auto">
+        <h3 class="text-xl font-bold mb-4">Mobile App Development</h3>
+        <p class="text-[var(--color-text-secondary)] mb-6">
+          Mobile apps are scoped and priced based on your specific needs. Every project is different, so I prefer to understand your requirements before quoting a price.
+        </p>
+        <ul class="mb-8 space-y-2">
+          <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>iOS and Android support</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>Native or cross-platform development</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>Push notifications and offline support</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>App Store and Google Play submission</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>Integration with your existing systems</span>
+          </li>
+        </ul>
+        <div class="text-center">
+          <a href="#intake" class="btn-gradient">Let's talk about your app</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabs = ['websites', 'apps', 'mobile'];
+
+  tabs.forEach(tab => {
+    const btn = document.getElementById(`${tab}-tab`);
+    btn?.addEventListener('click', () => {
+      // Remove active from all tabs, hide all content
+      tabs.forEach(t => {
+        document.getElementById(`${t}-tab`)?.classList.remove('active-tab');
+        document.getElementById(`${t}-content`)?.classList.add('hidden');
+      });
+      // Activate clicked tab and show its content
+      btn.classList.add('active-tab');
+      document.getElementById(`${tab}-content`)?.classList.remove('hidden');
+    });
+  });
+</script>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+  headingMargin?: string;
+  wide?: boolean;
+  as?: 'h1' | 'h2';
+  alt?: boolean;
+}
+
+const { title, id, headingMargin = 'mb-8', wide = false, as: Tag = 'h2', alt = false } = Astro.props;
+---
+
+<section id={id} class:list={['py-16', alt && 'bg-[var(--color-surface-raised)]']}>
+  <div class="max-w-6xl mx-auto px-6">
+    <div class:list={['reveal mx-auto', wide ? 'max-w-6xl' : 'max-w-3xl']}>
+      <Tag class:list={['font-bold', headingMargin, Tag === 'h1' ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl']}>
+        {title}
+      </Tag>
+      <slot />
+    </div>
+  </div>
+</section>

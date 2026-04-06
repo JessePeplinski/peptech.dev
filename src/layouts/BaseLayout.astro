@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import QRCodeModal from '../components/QRCodeModal.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://peptech.dev').href;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="author" content="Jesse Peplinski">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="canonical" href={canonicalUrl}>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Pep Tech">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content="https://peptech.dev/images/peptechlogo.png">
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@peptech_">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content="https://peptech.dev/images/peptechlogo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Anti-FOUC: apply saved theme before paint -->
+  <script is:inline>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+
+  <!-- Structured Data: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Pep Tech",
+    "url": "https://peptech.dev",
+    "description": "I help small business owners solve core problems with technology. Custom websites and apps that save you time, money, and deliver exceptional experiences for your customers.",
+    "founder": {
+      "@type": "Person",
+      "name": "Jesse Peplinski",
+      "url": "https://jessepeplinski.com"
+    },
+    "areaServed": "Syracuse, NY",
+    "sameAs": [
+      "https://x.com/peptech_",
+      "https://github.com/jessepeplinski",
+      "https://linkedin.com/in/jessepeplinski"
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-EQ0R2DLW83"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EQ0R2DLW83');
+  </script>
+</head>
+<body class="bg-[var(--color-surface)] text-[var(--color-text-primary)] font-sans min-h-screen flex flex-col">
+  <Header />
+
+  <main class="flex-1 pt-16">
+    <slot />
+  </main>
+
+  <Footer />
+  <QRCodeModal />
+</body>
+</html>

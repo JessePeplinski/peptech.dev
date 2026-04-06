@@ -1,0 +1,30 @@
+---
+import { values } from '../data/site-content';
+
+const iconPaths: Record<string, string> = {
+  clipboard: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
+  heart: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+  lightning: 'M13 10V3L4 14h7v7l9-11h-7z',
+};
+---
+
+<section id="values" class="py-16 bg-[var(--color-surface-raised)]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold mb-12">Core Values</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {values.map((value) => (
+        <div class="bg-[var(--color-surface)] rounded-lg p-6 shadow-md border border-[var(--color-surface-border)] card-hover">
+          <div class="text-center mb-4">
+            <div class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--color-brand-orange)]/10 text-[var(--color-brand-orange)] mb-3">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[value.icon]} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">{value.title}</h3>
+          </div>
+          <p class="text-[var(--color-text-secondary)]">{value.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
