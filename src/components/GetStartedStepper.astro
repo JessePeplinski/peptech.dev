@@ -268,10 +268,7 @@
     },
     'mobile-app': {
       onetime: 0, onetimeLabel: 'Custom quote', serviceName: 'Mobile App',
-      plans: [
-        { name: 'Essentials', price: 150, label: '$150/mo', features: ['Hosting & uptime monitoring', 'Security updates & patches', 'Bug fixes for existing functionality', 'Email support'] },
-        { name: 'Growth', price: 300, label: '$300/mo', features: ['Everything in Essentials', 'Monthly analytics & performance report', 'Monthly 30-minute strategy call'] },
-      ]
+      plans: [] // Pricing varies — no standard monthly tiers
     },
     'marketing': {
       onetime: 0, onetimeLabel: '$0', serviceName: 'Marketing',
@@ -381,6 +378,18 @@
   }
 
   function renderPlanGroup(svc: string, p: ServicePricing): string {
+    if (p.plans.length === 0) {
+      return `
+        <div class="mb-8">
+          <h4 class="text-lg font-semibold mb-4">${p.serviceName} — Monthly Plan</h4>
+          <div class="p-4 rounded-lg border border-[var(--color-surface-border)] bg-[var(--color-surface)] text-center">
+            <p class="text-lg font-bold gradient-text mb-1">Prices vary</p>
+            <p class="text-sm text-[var(--color-text-muted)]">Monthly hosting and maintenance will be scoped based on your project requirements.</p>
+          </div>
+        </div>
+      `;
+    }
+
     return `
       <div class="mb-8">
         <h4 class="text-lg font-semibold mb-4">${p.serviceName} — Monthly Plan</h4>
