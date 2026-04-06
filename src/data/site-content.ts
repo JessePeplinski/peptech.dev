@@ -144,31 +144,61 @@ export const appExamples: Value[] = [
   },
 ];
 
-export const websitePricing: PricingPackage[] = [
+export const websiteBuild: PricingPackage = {
+  name: 'Website Build',
+  price: '$2,000',
+  description: 'A complete, professional website built specifically for your business. One-time cost.',
+  features: [
+    'Custom design tailored to your brand',
+    'Responsive across all devices',
+    'SEO optimization',
+    'Google Analytics integration',
+    'Contact form integration',
+    'Training session for content updates',
+  ],
+};
+
+export const websiteMonthly: PricingPackage[] = [
   {
-    name: 'Static Website',
-    price: '$500',
-    description: 'Ideal for businesses that need a polished, user-friendly site without the need to regularly update content.',
+    name: 'Essentials',
+    price: '$50/mo',
+    description: 'Keep your site secure, fast, and visible in local search.',
     features: [
-      'Professional, responsive design',
-      'SEO optimization',
-      'Google Analytics integration',
+      'Hosting & uptime monitoring',
+      'Security updates & patches',
+      'Monthly SEO checkup',
+      'Monthly GEO checkup',
+      'Email support',
     ],
   },
   {
-    name: 'WordPress Website',
-    price: '$1000',
-    description: 'Perfect if you want the flexibility to be able to update your own content.',
+    name: 'Growth',
+    price: '$100/mo',
+    description: 'Everything in Essentials, plus proactive improvements to grow your business.',
     features: [
-      'Everything in the "Static Website" package',
-      'Content management system',
-      'Contact form integration',
-      'Blog functionality',
-      'Training session for easy content updates',
+      'Everything in Essentials',
+      'Unlimited content updates',
+      'Monthly analytics report',
+      'Priority support',
+      'Performance optimization',
     ],
     popular: true,
   },
 ];
+
+export const marketingPricing: PricingPackage = {
+  name: 'Marketing',
+  price: '$300/mo',
+  description: 'Ongoing marketing support to grow your online presence and reach new customers.',
+  features: [
+    'Social media management (2-3 posts/week)',
+    'Google Business Profile optimization',
+    'Review monitoring & response templates',
+    'Monthly performance report',
+    'Basic Google Ads management',
+    'Email newsletter (1/month)',
+  ],
+};
 
 export const appPricing: PricingPackage[] = [
   {
