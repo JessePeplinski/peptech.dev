@@ -146,12 +146,12 @@ export const appExamples: Value[] = [
 
 export const websiteBuild: PricingPackage = {
   name: 'Website Build',
-  price: '$2,000',
+  price: '$3,000',
   description: 'A complete, professional website built specifically for your business. One-time cost.',
   features: [
     'Custom design tailored to your brand',
     'Responsive across all devices',
-    'SEO optimization',
+    'SEO and GEO optimization',
     'Google Analytics integration',
     'Contact form integration',
     'Training session for content updates',
@@ -162,24 +162,22 @@ export const websiteMonthly: PricingPackage[] = [
   {
     name: 'Essentials',
     price: '$50/mo',
-    description: 'Keep your site secure, fast, and visible in local search.',
+    description: 'Keep your site secure, fast, and up to date. You handle your own content updates.',
     features: [
       'Hosting & uptime monitoring',
       'Security updates & patches',
-      'Monthly SEO checkup',
-      'Monthly GEO checkup',
+      'Content updates available at $150/hr',
       'Email support',
     ],
   },
   {
     name: 'Growth',
-    price: '$100/mo',
+    price: '$150/mo',
     description: 'Everything in Essentials, plus proactive improvements to grow your business.',
     features: [
       'Everything in Essentials',
       'Unlimited content updates',
-      'Monthly analytics report',
-      'Priority support',
+      'Monthly analytics, SEO, and GEO report',
       'Performance optimization',
     ],
     popular: true,
@@ -197,34 +195,23 @@ export const marketingPricing: PricingPackage = {
     'Monthly performance report',
     'Basic Google Ads management',
     'Email newsletter (1/month)',
+    'Monthly 15-minute strategy call',
   ],
 };
 
-export const appPricing: PricingPackage[] = [
-  {
-    name: 'Basic App Solution',
-    price: '$2,500+',
-    description: 'Perfect for adding specific functionality to solve a particular business challenge.',
-    features: [
-      'Custom designed solution',
-      'Single-feature focus',
-      'Integration with existing systems',
-      'User training',
-    ],
-  },
-  {
-    name: 'Advanced App Solution',
-    price: '$5,000+',
-    description: 'Comprehensive solutions for complex business challenges that require multiple features.',
-    features: [
-      'Everything in the "Basic App" package',
-      'Multi-feature solution',
-      'User roles and permissions',
-      'Custom dashboard & reporting',
-      'Extended maintenance & support',
-    ],
-  },
-];
+export const appPricing: PricingPackage = {
+  name: 'Custom App Development',
+  price: '$7,500+',
+  description: 'A custom application built to solve your specific business challenges. Scoped and priced based on your needs.',
+  features: [
+    'Custom designed solution',
+    'Integration with existing systems',
+    'User roles and permissions',
+    'Custom dashboard & reporting',
+    'User training',
+    'Ongoing maintenance & support',
+  ],
+};
 
 export const faqs: FAQItem[] = [
   {
