@@ -193,6 +193,29 @@ const recommendations = [
   track.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
   track.addEventListener('mouseleave', startAutoplay);
 
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const swipeThreshold = 50;
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    clearInterval(autoplayInterval);
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        next();
+      } else {
+        prev();
+      }
+    }
+    startAutoplay();
+  });
+
   updateSlidesPerView();
   startAutoplay();
   window.addEventListener('resize', updateSlidesPerView);
