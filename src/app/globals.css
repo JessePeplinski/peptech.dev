@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0f1a;
+  --foreground: #f1f5f9;
+  --surface: #0a0f1a;
+  --surface-raised: #131a2b;
+  --surface-soft: #131a2b;
+  --border: #1e293b;
+  --muted: #64748b;
+  --muted-strong: #94a3b8;
+  --brand-orange: #FFA500;
+  --brand-burnt: #e76d2c;
+  --brand-teal: #20d3c2;
+  --brand-green: #8bd450;
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-border: var(--border);
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--muted-strong);
+  --color-text-muted: var(--muted);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-burnt: var(--brand-burnt);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-soft: var(--surface-soft);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-burnt: var(--brand-burnt);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-green: var(--brand-green);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 165, 0, 0.32);
+  color: #ffffff;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--brand-orange), var(--brand-burnt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--brand-orange), var(--brand-burnt));
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 165, 0, 0.05);
+  border-color: var(--brand-orange);
+  transform: translateY(-2px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mdx-content a {
+  color: var(--brand-orange);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 165, 0, 0.35);
+  text-underline-offset: 0.2em;
+}
+
+.mdx-content a:hover {
+  color: #ffc04d;
+  text-decoration-color: currentColor;
+}
