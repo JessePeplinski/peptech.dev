@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Radio } from "lucide-react";
+import { BrandIcon } from "@/components/brand-icons";
+import { SocialIconLinks } from "@/components/social-icon-links";
 import {
   activeStreamProjects,
   siteLinks,
@@ -40,9 +41,11 @@ export default function Home() {
               className="btn-gradient"
             >
               Watch on Twitch
-              <Radio className="h-4 w-4" aria-hidden="true" />
+              <BrandIcon name="twitch" className="h-4 w-4" />
             </a>
           </div>
+
+          <SocialIconLinks />
         </div>
       </section>
 

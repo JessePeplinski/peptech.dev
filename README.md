@@ -26,7 +26,8 @@ npm run start
 - Homepage copy and stream notes: `src/app/page.tsx` and `src/lib/site.ts`
 - Content workflow: `docs/content-workflow.md`
 
-The Google Doc stays the backstage scratchpad. Do not mirror it raw into the repo or link it from the public surface by default.
+The Google Doc stays the backstage scratchpad. Do not mirror it raw into the
+repo or add it to global navigation by default.
 
 ## Routes
 

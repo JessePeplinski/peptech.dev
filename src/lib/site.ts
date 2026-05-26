@@ -1,5 +1,3 @@
-import { Code2, IdCard, MessagesSquare, Radio } from "lucide-react";
-
 export const siteLinks = {
   twitch: "https://www.twitch.tv/peptechdev",
   devDadTwitch: "https://www.twitch.tv/thedevdad",
@@ -23,11 +21,9 @@ export const navItems = [
 ];
 
 export const socialLinks = [
-  { href: siteLinks.twitch, label: "Twitch", icon: Radio },
-  { href: siteLinks.github, label: "GitHub", icon: Code2 },
-  { href: siteLinks.linkedin, label: "LinkedIn", icon: IdCard },
-  { href: siteLinks.x, label: "X", icon: MessagesSquare },
-];
+  { href: siteLinks.github, label: "GitHub", icon: "github" },
+  { href: siteLinks.x, label: "X", icon: "x" },
+] as const;
 
 export type Project = {
   name: string;
