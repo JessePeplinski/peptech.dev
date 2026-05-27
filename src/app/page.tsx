@@ -4,6 +4,7 @@ import { BrandIcon } from "@/components/brand-icons";
 import { SocialIconLinks } from "@/components/social-icon-links";
 import {
   activeStreamProjects,
+  builderRadarItems,
   siteLinks,
   streamIdeas,
   streamNotes,
@@ -168,6 +169,40 @@ export default function Home() {
                       .
                     </>
                   ) : null}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="builder-radar" className="px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold md:text-3xl">Builder Radar</h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-muted-strong">
+              Founder-led products and SaaS projects I think are worth
+              exploring. Not a formal endorsement or a guest list, just a
+              public place for cool builder work that should not stay buried in
+              a scratchpad.
+            </p>
+          </div>
+
+          <div className="divide-y divide-border">
+            {builderRadarItems.map((item) => (
+              <article key={item.name} className="py-6 first:pt-0 last:pb-0">
+                <h3 className="text-xl font-semibold">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-brand-orange underline transition-all hover:brightness-125"
+                  >
+                    {item.name}
+                  </a>
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-strong">
+                  {item.note}
                 </p>
               </article>
             ))}

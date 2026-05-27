@@ -15,6 +15,7 @@ export const siteLinks = {
 export const navItems = [
   { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
+  { href: "/#builder-radar", label: "Radar" },
   { href: "/#stream-notes", label: "Stream Notes" },
   { href: "/#ideas", label: "Ideas" },
   { href: "/merch", label: "Merch" },
@@ -51,6 +52,39 @@ export const activeStreamProjects: Project[] = [
       name: "@thedevdad",
       href: siteLinks.devDadTwitch,
     },
+  },
+];
+
+export type BuilderRadarItem = {
+  name: string;
+  href: string;
+  note: string;
+};
+
+export const builderRadarItems: BuilderRadarItem[] = [
+  {
+    name: "ClimbX",
+    href: "https://climbx.so/",
+    note:
+      "AI partner for learning from X content, drafting posts, and building a creator growth loop.",
+  },
+  {
+    name: "Builders Map",
+    href: "https://builders-map.com/",
+    note:
+      "A map for finding startup founders, indie hackers, and SaaS builders nearby.",
+  },
+  {
+    name: "iBuildInPublic",
+    href: "https://www.ibuildinpublic.com/",
+    note:
+      "A home base concept for solo SaaS builders sharing progress, launches, customer signal, and open asks.",
+  },
+  {
+    name: "incPhone",
+    href: "https://incphone.com/",
+    note:
+      "Business phone numbers, texting, call routing, and AI transcription for service businesses.",
   },
 ];
 
