@@ -63,6 +63,12 @@ export type BuilderRadarItem = {
 
 export const builderRadarItems: BuilderRadarItem[] = [
   {
+    name: "RoleNavigator",
+    href: "https://rolenavigator.com/",
+    note:
+      "Automated job search tool that scans listings, scores roles against your resume, and keeps the application pipeline organized.",
+  },
+  {
     name: "ClimbX",
     href: "https://climbx.so/",
     note:
