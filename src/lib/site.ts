@@ -63,6 +63,12 @@ export type BuilderRadarItem = {
 
 export const builderRadarItems: BuilderRadarItem[] = [
   {
+    name: "EverList",
+    href: "https://everlist.dev/",
+    note:
+      "Discoverability infrastructure for SaaS founders who want long-term visibility across Google, AI search, and recommendation systems.",
+  },
+  {
     name: "RoleNavigator",
     href: "https://rolenavigator.com/",
     note:
