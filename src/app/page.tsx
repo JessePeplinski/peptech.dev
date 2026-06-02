@@ -137,6 +137,17 @@ export default function Home() {
             <h2 className="text-2xl font-bold md:text-3xl">
               Active Stream Projects
             </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-strong">
+              Public indie page:{" "}
+              <a
+                href={siteLinks.indiePage}
+                target="_blank"
+                rel="noreferrer"
+                className="text-brand-orange underline transition-all hover:brightness-125"
+              >
+                IndiePage
+              </a>
+            </p>
           </div>
 
           <div className="divide-y divide-border">

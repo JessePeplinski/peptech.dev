@@ -6,6 +6,7 @@ export const siteLinks = {
   github: "https://github.com/JessePeplinski",
   linkedin: "https://linkedin.com/in/jessepeplinski",
   x: "https://x.com/peptechdev",
+  indiePage: "https://indiepa.ge/peptechdev",
   personal: "https://jessepeplinski.com",
   pepTechStudios: "https://peptechstudios.com",
   trySignalHire: "https://trysignalhire.com",
