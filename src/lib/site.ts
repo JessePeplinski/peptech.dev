@@ -5,7 +5,7 @@ export const siteLinks = {
   schedule: "https://calendly.com/jesse-peplinski/30min",
   github: "https://github.com/JessePeplinski",
   linkedin: "https://linkedin.com/in/jessepeplinski",
-  x: "https://x.com/peptechdev",
+  x: "https://x.com/jessepeplinski",
   instagram: "https://instagram.com/peptechdev",
   tiktok: "https://tiktok.com/@peptechdev",
   indiePage: "https://indiepa.ge/peptechdev",

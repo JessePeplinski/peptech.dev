@@ -10,7 +10,7 @@ export const siteMeta = {
   socialDescription:
     "AI product builds, stream notes, and developer experiments from Jesse Peplinski.",
   author: "Jesse Peplinski",
-  handle: "@peptechdev",
+  handle: "@jessepeplinski",
   locale: "en_US",
   location: {
     name: "Syracuse, NY",
@@ -50,7 +50,7 @@ export const homeJsonLd = {
       "@type": "Person",
       "@id": `${siteUrl}/#jesse-peplinski`,
       name: siteMeta.author,
-      alternateName: "peptechdev",
+      alternateName: "jessepeplinski",
       url: siteUrl,
       image: `${siteUrl}/images/headshot.png`,
       jobTitle: "Software Engineer",
