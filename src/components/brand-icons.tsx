@@ -1,5 +1,5 @@
 type BrandIconProps = {
-  name: "github" | "twitch" | "x";
+  name: "github" | "instagram" | "tiktok" | "twitch" | "x";
   className?: string;
 };
 
@@ -26,6 +26,38 @@ export function BrandIcon({ name, className = "h-5 w-5" }: BrandIconProps) {
         aria-hidden="true"
       >
         <path d="M11.571 4.714h1.715v5.143h-1.715zm4.715 0H18v5.143h-1.714zM6 0 1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" />
+      </svg>
+    );
+  }
+
+  if (name === "instagram") {
+    return (
+      <svg
+        className={className}
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <path d="M17.5 6.5h.01" />
+      </svg>
+    );
+  }
+
+  if (name === "tiktok") {
+    return (
+      <svg
+        className={className}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M16.6 5.82a6.25 6.25 0 0 0 4.18 1.6v3.38a9.64 9.64 0 0 1-4.18-.96v6.24a6.34 6.34 0 1 1-5.47-6.28v3.46a2.96 2.96 0 1 0 2.07 2.82V0h3.4c.1 2.13 1 4.17 2.5 5.82Z" />
       </svg>
     );
   }

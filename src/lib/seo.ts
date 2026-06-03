@@ -37,6 +37,8 @@ export const sameAsLinks = [
   siteLinks.github,
   siteLinks.linkedin,
   siteLinks.x,
+  siteLinks.instagram,
+  siteLinks.tiktok,
   siteLinks.personal,
   siteLinks.pepTechStudios,
 ];

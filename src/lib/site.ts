@@ -6,6 +6,8 @@ export const siteLinks = {
   github: "https://github.com/JessePeplinski",
   linkedin: "https://linkedin.com/in/jessepeplinski",
   x: "https://x.com/peptechdev",
+  instagram: "https://instagram.com/peptechdev",
+  tiktok: "https://tiktok.com/@peptechdev",
   indiePage: "https://indiepa.ge/peptechdev",
   personal: "https://jessepeplinski.com",
   pepTechStudios: "https://peptechstudios.com",
@@ -25,6 +27,8 @@ export const navItems = [
 export const socialLinks = [
   { href: siteLinks.github, label: "GitHub", icon: "github" },
   { href: siteLinks.x, label: "X", icon: "x" },
+  { href: siteLinks.instagram, label: "Instagram", icon: "instagram" },
+  { href: siteLinks.tiktok, label: "TikTok", icon: "tiktok" },
 ] as const;
 
 export type Project = {
