@@ -19,8 +19,6 @@ export const navItems = [
   { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
   { href: "/#builder-radar", label: "Radar" },
-  { href: "/#stream-notes", label: "Stream Notes" },
-  { href: "/#ideas", label: "Ideas" },
   { href: "/merch", label: "Merch" },
 ];
 
@@ -103,31 +101,4 @@ export const builderRadarItems: BuilderRadarItem[] = [
     note:
       "Business phone numbers, texting, call routing, and AI transcription for service businesses.",
   },
-];
-
-export const streamNotes = [
-  {
-    date: "May 26, 2026 (solo)",
-    bullets: [
-      "TrySignalHire day. The goal was basically: make the candidate flow less janky and keep myself from turning it into a planning spiral.",
-      "Looked at resume upload, danger-zone account cleanup, and the stream workout counters.",
-      "Useful takeaway: one real product slice per stream is the right constraint.",
-    ],
-  },
-  {
-    date: "May 23, 2026 (solo)",
-    bullets: [
-      "Worked on the new landing page for trylaunchloop.com.",
-      "Launched a new story page.",
-      "Still rough, but the direction is better: less generic SaaS copy, more of what DevDad and I are actually trying to build.",
-    ],
-  },
-];
-
-export const streamIdeas = [
-  "Keep a tiny public backlog of stream ideas so the next stream has a real starting point.",
-  "Do short post-stream notes: what I tried, what shipped, what got punted.",
-  "Let chat pick between a few small next steps once the stream has enough rhythm.",
-  "Use duo streams for product/story work that benefits from another builder pushing back.",
-  "Maybe merch eventually, but only if it is funny or useful enough to justify existing.",
 ];

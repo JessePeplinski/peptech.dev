@@ -6,8 +6,6 @@ import {
   activeStreamProjects,
   builderRadarItems,
   siteLinks,
-  streamIdeas,
-  streamNotes,
 } from "@/lib/site";
 
 export default function Home() {
@@ -62,9 +60,9 @@ export default function Home() {
               and I like building things where the useful part is visible fast.
             </p>
             <p>
-              This website is where I keep the builder side: live streams,
-              active projects, notes, and the messy parts of figuring things
-              out.
+              This website is where I keep the public builder side: live
+              streams, active projects, and a curated look at what I am
+              building or finding.
             </p>
             <p>
               I stream because it keeps the work honest. If I can explain what
@@ -218,42 +216,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="stream-notes" className="px-6 py-16">
-        <div className="mx-auto max-w-3xl">
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold md:text-3xl">Stream Notes</h2>
-          </div>
-
-          <div className="divide-y divide-border">
-            {streamNotes.map((note) => (
-              <article key={note.date} className="py-8 first:pt-0 last:pb-0">
-                <h3 className="mb-4 text-xl font-semibold text-foreground">
-                  {note.date}
-                </h3>
-                <ul className="list-disc space-y-3 pl-5 leading-relaxed text-muted-strong">
-                  {note.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="ideas" className="px-6 py-16">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="mb-8 text-2xl font-bold md:text-3xl">
-            Stream Ideas
-          </h2>
-          <ul className="list-disc space-y-3 pl-5 text-lg leading-relaxed text-muted-strong">
-            {streamIdeas.map((idea) => (
-              <li key={idea}>{idea}</li>
-            ))}
-          </ul>
         </div>
       </section>
 

@@ -6,14 +6,13 @@ Primary URL: https://peptech.dev
 
 ## What This Site Is
 
-peptech.dev is Jesse Peplinski's builder-side home for active projects, raw stream notes, Builder Radar entries, stream ideas, and lightweight merch concepts.
+peptech.dev is Jesse Peplinski's builder-side home for active projects, Builder Radar entries, developer experiments, and lightweight merch concepts.
 
 The public story is intentionally simple: Jesse is a software engineer in Syracuse, NY building AI products in public live on Twitch.
 
 ## Key Pages
 
 - Home: https://peptech.dev/
-- Stream notes: https://peptech.dev/#stream-notes
 - Active projects: https://peptech.dev/#projects
 - Builder Radar: https://peptech.dev/#builder-radar
 - Merch ideas: https://peptech.dev/merch
@@ -27,6 +26,8 @@ The public story is intentionally simple: Jesse is a software engineer in Syracu
 
 Builder Radar is a curated list of founder-led products and SaaS projects Jesse thinks are worth exploring. It is public praise and curation, not a sponsorship, affiliate placement, endorsement, or formal guest booking page.
 
+- EverList: https://everlist.dev/
+- RoleNavigator: https://rolenavigator.com/
 - ClimbX: https://climbx.so/
 - Builders Map: https://builders-map.com/
 - iBuildInPublic: https://www.ibuildinpublic.com/

@@ -5,18 +5,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/notes",
-        destination: "/#stream-notes",
-        permanent: false,
-      },
-      {
-        source: "/notes/:path*",
-        destination: "/#stream-notes",
-        permanent: false,
-      },
-      {
         source: "/twitch",
-        destination: "/#stream-notes",
+        destination: "https://www.twitch.tv/peptechdev",
         permanent: false,
       },
       {
@@ -26,12 +16,12 @@ const nextConfig = {
       },
       {
         source: "/streams",
-        destination: "/#stream-notes",
+        destination: "/#channel",
         permanent: false,
       },
       {
         source: "/streams/:path*",
-        destination: "/#stream-notes",
+        destination: "/#channel",
         permanent: false,
       },
     ];

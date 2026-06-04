@@ -2,7 +2,7 @@
 
 Jesse Peplinski's developer and stream hub.
 
-This site is intentionally separate from [peptechstudios.com](https://peptechstudios.com). `peptechstudios.com` is the client-services/business site. `peptech.dev` is the developer persona: story, channel purpose, active stream projects, lightweight stream notes, and merch ideas.
+This site is intentionally separate from [peptechstudios.com](https://peptechstudios.com). `peptechstudios.com` is the client-services/business site. `peptech.dev` is the developer persona: story, channel purpose, active stream projects, Builder Radar, and merch ideas.
 
 ## Stack
 
@@ -23,18 +23,18 @@ npm run start
 
 ## Content
 
-- Homepage copy and stream notes: `src/app/page.tsx` and `src/lib/site.ts`
+- Homepage copy and curated lists: `src/app/page.tsx` and `src/lib/site.ts`
 - Content workflow: `docs/content-workflow.md`
 
-The Google Doc stays the backstage scratchpad. Do not mirror it raw into the
-repo or add it to global navigation by default.
+The Google Doc stays the backstage scratchpad for rough notes and stream ideas.
+Do not mirror it raw into the repo or add it to global navigation by default.
 
 ## Routes
 
 - `/` - developer hub homepage
 - `/merch` - placeholder merch ideas
-- `/notes` - temporary redirect to the on-page stream notes
-- `/twitch`, `/projects`, and `/streams` - temporary redirects to homepage anchors
+- `/twitch` - temporary redirect to the Twitch channel
+- `/projects` and `/streams` - temporary redirects to homepage anchors
 
 ## Publishing
 

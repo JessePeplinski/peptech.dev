@@ -54,7 +54,7 @@ export default function Image() {
             maxWidth: 780,
           }}
         >
-          Live on Twitch: active projects, raw stream notes, and developer
+          Live on Twitch: active projects, Builder Radar, and developer
           experiments.
         </div>
         <div

@@ -6,9 +6,9 @@ export const siteMeta = {
   name: "peptech.dev",
   title: "peptech.dev - Jesse Peplinski",
   description:
-    "Jesse Peplinski builds AI products in public live on Twitch. Follow active projects, raw stream notes, and developer experiments from peptech.dev.",
+    "Jesse Peplinski builds AI products in public live on Twitch. Follow active projects, Builder Radar, and developer experiments from peptech.dev.",
   socialDescription:
-    "AI product builds, stream notes, and developer experiments from Jesse Peplinski.",
+    "AI product builds and developer experiments from Jesse Peplinski.",
   author: "Jesse Peplinski",
   handle: "@jessepeplinski",
   locale: "en_US",
