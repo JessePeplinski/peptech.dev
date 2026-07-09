@@ -19,8 +19,9 @@ The public story is intentionally simple: Jesse is a software engineer in Syracu
 
 ## Active Projects
 
-- TrySignalHire: https://trysignalhire.com
-- LaunchLoop: https://trylaunchloop.com
+- TryLaunchLoop: https://trylaunchloop.com
+- The Black Relay: https://theblackrelay.com
+- Shop My Farmers Market: https://shopmyfarmersmarket.com
 
 ## Builder Radar
 

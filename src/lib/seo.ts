@@ -27,8 +27,9 @@ export const siteMeta = {
     "software engineer",
     "AI-assisted software development",
     "SaaS projects",
-    "TrySignalHire",
-    "LaunchLoop",
+    "TryLaunchLoop",
+    "The Black Relay",
+    "Shop My Farmers Market",
     "Syracuse software engineer",
   ],
 };

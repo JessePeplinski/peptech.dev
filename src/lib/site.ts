@@ -11,8 +11,9 @@ export const siteLinks = {
   indiePage: "https://indiepa.ge/peptechdev",
   personal: "https://jessepeplinski.com",
   pepTechStudios: "https://peptechstudios.com",
-  trySignalHire: "https://trysignalhire.com",
-  launchLoop: "https://trylaunchloop.com",
+  tryLaunchLoop: "https://trylaunchloop.com",
+  theBlackRelay: "https://theblackrelay.com",
+  shopMyFarmersMarket: "https://shopmyfarmersmarket.com",
 };
 
 export const navItems = [
@@ -41,20 +42,26 @@ export type Project = {
 
 export const activeStreamProjects: Project[] = [
   {
-    name: "TrySignalHire",
+    name: "TryLaunchLoop",
     summary:
-      "The main solo stream project right now. I am building it because hiring with AI is getting weird, noisy, and hard to trust.",
-    href: siteLinks.trySignalHire,
-  },
-  {
-    name: "LaunchLoop",
-    summary:
-      "A duo stream project around building, launching, and talking through product ideas in public.",
-    href: siteLinks.launchLoop,
+      "A product that turns GitHub commits and product context into review-ready social posts, so builders can keep shipping without forgetting to share the work.",
+    href: siteLinks.tryLaunchLoop,
     collaborator: {
       name: "@thedevdad",
       href: siteLinks.devDadTwitch,
     },
+  },
+  {
+    name: "The Black Relay",
+    summary:
+      "A low-poly third-person war game where factions scavenge batteries, power an abandoned relay network, hunt for a hidden Beacon, and survive the machines drawn to the signal.",
+    href: siteLinks.theBlackRelay,
+  },
+  {
+    name: "Shop My Farmers Market",
+    summary:
+      "A local food marketplace that helps shoppers find nearby farms, see what is fresh, and reserve food for pickup while helping farmers stay discoverable without giving up margin.",
+    href: siteLinks.shopMyFarmersMarket,
   },
 ];
 
