@@ -1,5 +1,12 @@
 type BrandIconProps = {
-  name: "discord" | "github" | "instagram" | "tiktok" | "twitch" | "x";
+  name:
+    | "discord"
+    | "github"
+    | "instagram"
+    | "tiktok"
+    | "twitch"
+    | "x"
+    | "youtube";
   className?: string;
 };
 
@@ -71,6 +78,19 @@ export function BrandIcon({ name, className = "h-5 w-5" }: BrandIconProps) {
         aria-hidden="true"
       >
         <path d="M16.6 5.82a6.25 6.25 0 0 0 4.18 1.6v3.38a9.64 9.64 0 0 1-4.18-.96v6.24a6.34 6.34 0 1 1-5.47-6.28v3.46a2.96 2.96 0 1 0 2.07 2.82V0h3.4c.1 2.13 1 4.17 2.5 5.82Z" />
+      </svg>
+    );
+  }
+
+  if (name === "youtube") {
+    return (
+      <svg
+        className={className}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M23.5 6.19a3.02 3.02 0 0 0-2.13-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.37.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.13 2.14c1.87.5 9.37.5 9.37.5s7.5 0 9.37-.5a3.02 3.02 0 0 0 2.13-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z" />
       </svg>
     );
   }

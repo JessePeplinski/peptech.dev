@@ -9,6 +9,7 @@ export const siteLinks = {
   x: "https://x.com/jessepeplinski",
   instagram: "https://instagram.com/peptechdev",
   tiktok: "https://tiktok.com/@peptechdev",
+  youtube: "https://www.youtube.com/@PepTechDev",
   indiePage: "https://indiepa.ge/peptechdev",
   personal: "https://jessepeplinski.com",
   allProjects: "https://jessepeplinski.com/projects/",
@@ -31,6 +32,7 @@ export const socialLinks = [
   { href: siteLinks.x, label: "X", icon: "x" },
   { href: siteLinks.instagram, label: "Instagram", icon: "instagram" },
   { href: siteLinks.tiktok, label: "TikTok", icon: "tiktok" },
+  { href: siteLinks.youtube, label: "YouTube", icon: "youtube" },
 ] as const;
 
 export type Project = {
