@@ -1,5 +1,6 @@
 export const siteLinks = {
   twitch: "https://www.twitch.tv/peptechdev",
+  discord: "https://discord.gg/3GRShjYDQC",
   devDadTwitch: "https://www.twitch.tv/thedevdad",
   email: "mailto:jesse@peptechstudios.com?subject=Contact%20from%20peptech.dev",
   schedule: "https://calendly.com/jesse-peplinski/30min",
@@ -10,10 +11,11 @@ export const siteLinks = {
   tiktok: "https://tiktok.com/@peptechdev",
   indiePage: "https://indiepa.ge/peptechdev",
   personal: "https://jessepeplinski.com",
+  allProjects: "https://jessepeplinski.com/projects/",
   pepTechStudios: "https://peptechstudios.com",
+  pepReviews: "https://pep.reviews",
   tryLaunchLoop: "https://trylaunchloop.com",
   theBlackRelay: "https://theblackrelay.com",
-  shopMyFarmersMarket: "https://shopmyfarmersmarket.com",
 };
 
 export const navItems = [
@@ -25,6 +27,7 @@ export const navItems = [
 
 export const socialLinks = [
   { href: siteLinks.github, label: "GitHub", icon: "github" },
+  { href: siteLinks.discord, label: "Discord", icon: "discord" },
   { href: siteLinks.x, label: "X", icon: "x" },
   { href: siteLinks.instagram, label: "Instagram", icon: "instagram" },
   { href: siteLinks.tiktok, label: "TikTok", icon: "tiktok" },
@@ -52,16 +55,16 @@ export const activeStreamProjects: Project[] = [
     },
   },
   {
+    name: "Pep Reviews",
+    summary:
+      "Private first-impression video reviews for landing pages, SaaS products, and mobile apps, with direct, prioritized feedback from a working builder.",
+    href: siteLinks.pepReviews,
+  },
+  {
     name: "The Black Relay",
     summary:
       "A low-poly third-person war game where factions scavenge batteries, power an abandoned relay network, hunt for a hidden Beacon, and survive the machines drawn to the signal.",
     href: siteLinks.theBlackRelay,
-  },
-  {
-    name: "Shop My Farmers Market",
-    summary:
-      "A local food marketplace that helps shoppers find nearby farms, see what is fresh, and reserve food for pickup while helping farmers stay discoverable without giving up margin.",
-    href: siteLinks.shopMyFarmersMarket,
   },
 ];
 

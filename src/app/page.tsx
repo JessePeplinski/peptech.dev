@@ -22,10 +22,7 @@ export default function Home() {
             className="mb-6 h-32 w-32 rounded-full border-2 border-border object-cover"
           />
           <h1 className="mb-6 text-balance text-5xl font-bold leading-tight md:text-7xl">
-            Hi, I&apos;m{" "}
-            <span className="block md:inline">
-              <span className="gradient-text">Jesse</span>.
-            </span>
+            Hi, I&apos;m <span className="gradient-text">Jesse</span>.
           </h1>
           <p className="mb-8 max-w-2xl text-xl leading-relaxed text-muted-strong md:text-2xl">
             I build <span className="gradient-text">AI products in public</span>{" "}
@@ -144,6 +141,16 @@ export default function Home() {
                 className="text-brand-orange underline transition-all hover:brightness-125"
               >
                 IndiePage
+              </a>
+              {" · "}
+              All projects:{" "}
+              <a
+                href={siteLinks.allProjects}
+                target="_blank"
+                rel="noreferrer"
+                className="text-brand-orange underline transition-all hover:brightness-125"
+              >
+                jessepeplinski.com
               </a>
             </p>
           </div>
